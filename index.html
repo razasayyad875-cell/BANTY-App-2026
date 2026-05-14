@@ -83,6 +83,35 @@ NEET • JEE • UPSC
 <button onclick="showneet()">
 Open NEET Questions
 </button>
+
+<div id="neetbox" style="display:none; margin-top:15px;">
+
+<div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
+Q1. Human heart has how many chambers?
+<br><br>
+A. 2
+<br>
+B. 3
+<br>
+C. 4
+<br>
+D. 5
+</div>
+
+<div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
+Q2. DNA ka full form kya hai?
+<br><br>
+A. Deoxyribo Nucleic Acid
+<br>
+B. Dynamic Nuclear Acid
+<br>
+C. Double Nitrogen Atom
+<br>
+D. None
+</div>
+
+</div>
+
 </div>
 
 <div class="card">
@@ -112,7 +141,15 @@ Made By BANTY Raza
 <script>
 
 function showneet(){
-alert("NEET Questions Coming Soon");
+
+var x = document.getElementById("neetbox");
+
+if(x.style.display=="none"){
+x.style.display="block";
+}else{
+x.style.display="none";
+}
+
 }
 
 function showjee(){
