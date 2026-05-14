@@ -87,15 +87,19 @@ Open NEET Questions
 <div id="neetbox" style="display:none; margin-top:15px;">
 
 <div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
+
 Q1. Human heart has how many chambers?
+
 <br><br>
-A. 2
-<br>
-B. 3
-<br>
-C. 4
-<br>
-D. 5
+
+<button onclick="check1('A')">A. 2</button>
+
+<button onclick="check1('B')">B. 3</button>
+
+<button onclick="check1('C')">C. 4</button>
+
+<button onclick="check1('D')">D. 5</button>
+
 </div>
 
 <div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
@@ -185,7 +189,15 @@ x.style.display="none";
 }
 
 }
+function check1(ans){
 
+if(ans=="C"){
+alert("Correct Answer ✅");
+}else{
+alert("Wrong Answer ❌");
+}
+
+}
 function showjee(){
 alert("JEE Questions Coming Soon");
 }
