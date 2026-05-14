@@ -76,6 +76,7 @@ NEET • JEE • UPSC
 
 <div class="container">
 <h2 id="score">Score: 0</h2>
+  <h2 id="timer">Time Left: 60</h2>
 <div class="card">
 <h2>NEET Previous Year Questions</h2>
 <p>Biology • Physics • Chemistry</p>
@@ -178,6 +179,24 @@ Made By BANTY Raza
 
 <script>
 var score = 0;
+  var time = 60;
+
+setInterval(function(){
+
+time--;
+
+document.getElementById("timer").innerHTML =
+"Time Left: " + time;
+
+if(time<=0){
+
+alert("Time Over");
+
+location.reload();
+
+}
+
+},1000);
 function showneet(){
 
 var x = document.getElementById("neetbox");
