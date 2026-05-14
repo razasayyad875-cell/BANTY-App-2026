@@ -2,36 +2,128 @@
 <html>
 <head>
 <title>BANTY Learning</title>
+
 <style>
+
 body{
+margin:0;
 font-family:Arial;
-background:#111;
+background:#0f172a;
 color:white;
 text-align:center;
-padding:40px;
 }
+
+.header{
+background:#111827;
+padding:20px;
+font-size:28px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+.tag{
+font-size:18px;
+margin-top:5px;
+color:#cbd5e1;
+}
+
+.container{
+padding:20px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+margin:20px;
+border-radius:15px;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
 button{
-padding:15px 30px;
-background:red;
-color:white;
+width:100%;
+padding:15px;
+margin-top:10px;
 border:none;
-font-size:20px;
 border-radius:10px;
+font-size:18px;
+background:#38bdf8;
+color:white;
+font-weight:bold;
 }
+
+button:hover{
+background:#0284c7;
+}
+
+.footer{
+margin-top:30px;
+padding:15px;
+background:#111827;
+color:#94a3b8;
+}
+
 </style>
 </head>
 
 <body>
 
-<h1>BANTY Learning</h1>
+<div class="header">
+BANTY Learning
+<div class="tag">
+NEET • JEE • UPSC
+</div>
+</div>
 
-<h2>NEET • JEE • UPSC</h2>
+<div class="container">
 
-<p>Previous Year Questions App</p>
+<div class="card">
+<h2>NEET Previous Year Questions</h2>
+<p>Biology • Physics • Chemistry</p>
 
-<button onclick="alert('Welcome to BANTY Learning')">
-Start Learning
+<button onclick="showneet()">
+Open NEET Questions
 </button>
+</div>
+
+<div class="card">
+<h2>JEE Previous Year Questions</h2>
+<p>Math • Physics • Chemistry</p>
+
+<button onclick="showjee()">
+Open JEE Questions
+</button>
+</div>
+
+<div class="card">
+<h2>UPSC Previous Year Questions</h2>
+<p>History • Polity • Geography</p>
+
+<button onclick="showupsc()">
+Open UPSC Questions
+</button>
+</div>
+
+</div>
+
+<div class="footer">
+Made By BANTY Raza
+</div>
+
+<script>
+
+function showneet(){
+alert("NEET Questions Coming Soon");
+}
+
+function showjee(){
+alert("JEE Questions Coming Soon");
+}
+
+function showupsc(){
+alert("UPSC Questions Coming Soon");
+}
+
+</script>
 
 </body>
 </html>
