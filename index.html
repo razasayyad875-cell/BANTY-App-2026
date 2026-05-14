@@ -75,7 +75,7 @@ NEET • JEE • UPSC
 </div>
 
 <div class="container">
-
+<h2 id="score">Score: 0</h2>
 <div class="card">
 <h2>NEET Previous Year Questions</h2>
 <p>Biology • Physics • Chemistry</p>
@@ -177,7 +177,7 @@ Made By BANTY Raza
 </div>
 
 <script>
-
+var score = 0;
 function showneet(){
 
 var x = document.getElementById("neetbox");
@@ -192,9 +192,18 @@ x.style.display="none";
 function check1(ans){
 
 if(ans=="C"){
+
+score++;
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
 alert("Correct Answer ✅");
+
 }else{
+
 alert("Wrong Answer ❌");
+
 }
 
 }
