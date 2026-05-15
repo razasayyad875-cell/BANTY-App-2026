@@ -70,7 +70,10 @@ background:#111827;
 color:#94a3b8;
   font-size:18px;
 }
-
+.light{
+background:white;
+color:black;
+}
 </style>
 </head>
 
@@ -89,6 +92,9 @@ NEET • JEE • UPSC
   <h2 id="highscore">High Score: 0</h2>
   <h3 id="result"></h3>
   <h2 id="timer">Time Left: 60</h2>
+  <button onclick="darkmode()">
+Dark / Light Mode
+  </button>
   <button onclick="restartQuiz()">
 Restart Quiz
   </button>
@@ -269,6 +275,11 @@ location.reload();
 }
 
 },1000);
+  function darkmode(){
+
+document.body.classList.toggle("light");
+
+  }
   function restartQuiz(){
 
 location.reload();
