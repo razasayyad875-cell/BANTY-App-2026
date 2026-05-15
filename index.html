@@ -86,6 +86,7 @@ NEET • JEE • UPSC
 <div class="container">
   <h3 id="datetime"></h3>
 <h2 id="score">Score: 0</h2>
+  <h3 id="result"></h3>
   <h2 id="timer">Time Left: 60</h2>
   <button onclick="restartQuiz()">
 Restart Quiz
@@ -284,6 +285,8 @@ function check1(ans,btn){
 if(ans=="C"){
 
 btn.style.background="green";
+  document.getElementById("result").innerHTML =
+"Correct Answer ✅";
 navigator.vibrate(50);
 score++;
 
@@ -293,6 +296,8 @@ document.getElementById("score").innerHTML =
 }else{
 
 btn.style.background="red";
+  document.getElementById("result").innerHTML =
+"Wrong Answer ❌";
 navigator.vibrate(100);
 }
 
