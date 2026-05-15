@@ -80,6 +80,7 @@ NEET • JEE • UPSC
 </div>
 
 <div class="container">
+  <h3 id="datetime"></h3>
 <h2 id="score">Score: 0</h2>
   <h2 id="timer">Time Left: 60</h2>
   <button onclick="restartQuiz()">
@@ -213,6 +214,14 @@ Made By BANTY Raza
 
 <script>
   alert("Welcome to BANTY Learning 🚀");
+  setInterval(function(){
+
+var d = new Date();
+
+document.getElementById("datetime").innerHTML =
+d.toLocaleString();
+
+},1000);
 var score = 0;
   var time = 60;
 
