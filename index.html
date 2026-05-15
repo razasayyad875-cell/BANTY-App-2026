@@ -204,7 +204,19 @@ document.getElementById("timer").innerHTML =
 
 if(time<=0){
 
-alert("Quiz Finished 🎉\nYour Score: " + score);
+if(score>=5){
+
+alert("Excellent 🎉\nYour Score: " + score);
+
+}else if(score>=3){
+
+alert("Good 👍\nYour Score: " + score);
+
+}else{
+
+alert("Try Again 😢\nYour Score: " + score);
+
+}
 
 location.reload();
 
