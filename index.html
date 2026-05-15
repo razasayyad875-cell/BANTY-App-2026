@@ -106,15 +106,27 @@ Q1. Human heart has how many chambers?
 Next Question
 </button>
 <div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
+
 Q2. DNA ka full form kya hai?
+
 <br><br>
+
+<button onclick="check2('A',this)">
 A. Deoxyribo Nucleic Acid
-<br>
+</button>
+
+<button onclick="check2('B',this)">
 B. Dynamic Nuclear Acid
-<br>
+</button>
+
+<button onclick="check2('C',this)">
 C. Double Nitrogen Atom
-<br>
+</button>
+
+<button onclick="check2('D',this)">
 D. None
+</button>
+
 </div>
 <div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
 Q3. Which vitamin is produced by sunlight?
@@ -213,6 +225,24 @@ x.style.display="none";
 function check1(ans,btn){
 
 if(ans=="C"){
+
+btn.style.background="green";
+
+score++;
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+}else{
+
+btn.style.background="red";
+
+}
+
+}
+  function check2(ans,btn){
+
+if(ans=="A"){
 
 btn.style.background="green";
 
