@@ -93,13 +93,13 @@ Q1. Human heart has how many chambers?
 
 <br><br>
 
-<button onclick="check1('A')">A. 2</button>
+<button onclick="check1('A',this)">A. 2</button>
 
-<button onclick="check1('B')">B. 3</button>
+<button onclick="check1('B',this)">B. 3</button>
 
-<button onclick="check1('C')">C. 4</button>
+<button onclick="check1('C',this)">C. 4</button>
 
-<button onclick="check1('D')">D. 5</button>
+<button onclick="check1('D',this)">D. 5</button>
 
 </div>
 
@@ -208,20 +208,20 @@ x.style.display="none";
 }
 
 }
-function check1(ans){
+function check1(ans,btn){
 
 if(ans=="C"){
+
+btn.style.background="green";
 
 score++;
 
 document.getElementById("score").innerHTML =
 "Score: " + score;
 
-alert("Correct Answer ✅");
-
 }else{
 
-alert("Wrong Answer ❌");
+btn.style.background="red";
 
 }
 
