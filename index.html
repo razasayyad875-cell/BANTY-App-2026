@@ -82,6 +82,9 @@ NEET • JEE • UPSC
 <div class="container">
 <h2 id="score">Score: 0</h2>
   <h2 id="timer">Time Left: 60</h2>
+  <button onclick="restartQuiz()">
+Restart Quiz
+  </button>
   <div style="width:100%;background:#334155;border-radius:10px;">
 
 <div id="progress"
@@ -241,6 +244,11 @@ location.reload();
 }
 
 },1000);
+  function restartQuiz(){
+
+location.reload();
+
+  }
 function showneet(){
 
 var x = document.getElementById("neetbox");
