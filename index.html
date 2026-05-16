@@ -131,6 +131,9 @@ Success Starts With Daily Practice 🚀
   </h3>
   <h3 id="greet"></h3>
 <h2 id="score">Score: 0</h2>
+  <h3 id="percent">
+Completion: 0%
+  </h3>
   <h2 id="highscore">High Score: 0</h2>
   <h3 id="result"></h3>
   <h2 id="timer">Time Left: 60</h2>
@@ -375,6 +378,8 @@ score++;
 
 document.getElementById("score").innerHTML =
 "Score: " + score;
+  document.getElementById("percent").innerHTML =
+"Completion: " + (score*20) + "%";
 if(score > highscore){
 
 highscore = score;
@@ -404,7 +409,8 @@ score++;
 
 document.getElementById("score").innerHTML =
 "Score: " + score;
-
+document.getElementById("percent").innerHTML =
+"Completion: " + (score*20) + "%";
 }else{
 
 btn.style.background="red";
