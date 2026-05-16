@@ -112,6 +112,18 @@ margin-top:10px;
     #percent{
 animation:colorchange 2s infinite;
     }
+    #circle{
+width:120px;
+height:120px;
+border-radius:50%;
+border:8px solid #22c55e;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:20px auto;
+font-size:28px;
+box-shadow:0 0 15px #22c55e;
+}
     #score{
 animation:glowtext 1.5s infinite alternate;
     }
@@ -225,6 +237,11 @@ Success Starts With Daily Practice 🚀
   <h3 id="percent">
 Completion: 0%
   </h3>
+  <div id="circle">
+
+0%
+
+  </div>
   <div style="
 width:100%;
 background:#334155;
@@ -533,6 +550,8 @@ document.getElementById("score").innerHTML =
 "Completion: " + (score*20) + "%";
   document.getElementById("progressbar").style.width =
 (score*20) + "%";
+  document.getElementById("circle").innerHTML =
+(score*20) + "%";
 if(score > highscore){
 
 highscore = score;
@@ -565,6 +584,8 @@ document.getElementById("score").innerHTML =
 document.getElementById("percent").innerHTML =
 "Completion: " + (score*20) + "%";
   document.getElementById("progressbar").style.width =
+(score*20) + "%";
+  document.getElementById("circle").innerHTML =
 (score*20) + "%";
 }else{
 
