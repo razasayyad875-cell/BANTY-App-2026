@@ -197,6 +197,9 @@ border-radius:10px;
 
 </div>
   <h2 id="highscore">High Score: 0</h2>
+  <h3 id="visitor">
+Visitors: 0
+</h3>
   <h3 id="result"></h3>
   <h2 id="timer">Time Left: 60</h2>
   <button onclick="darkmode()">
@@ -393,7 +396,15 @@ setTimeout(typingEffect,150);
 typingEffect();
 var score = 0;
   var highscore = localStorage.getItem("highscore") || 0;
+var visitors =
+localStorage.getItem("visitors") || 0;
 
+visitors++;
+
+localStorage.setItem("visitors",visitors);
+
+document.getElementById("visitor").innerHTML =
+"Visitors: " + visitors;
 document.getElementById("highscore").innerHTML =
 "High Score: " + highscore;
   var time = 60;
