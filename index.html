@@ -125,6 +125,7 @@ align-items:center;
 margin:20px auto;
 font-size:28px;
 box-shadow:0 0 15px #22c55e;
+      animation:pulse 1.5s infinite;
 }
     #score{
 animation:glowtext 1.5s infinite alternate;
@@ -194,6 +195,21 @@ transform:rotate(0deg);
 to{
 transform:rotate(360deg);
 }
+    @keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+  }
 
   }
 
