@@ -706,6 +706,20 @@ document.getElementById("score").innerHTML =
 (score*20) + "%";
   document.getElementById("circle").innerHTML =
 (score*20) + "%";
+  if(score>=1){
+document.getElementById("circle").style.borderColor =
+"#22c55e";
+}
+
+if(score>=3){
+document.getElementById("circle").style.borderColor =
+"#facc15";
+}
+
+if(score>=5){
+document.getElementById("circle").style.borderColor =
+"#ef4444";
+  }
 if(score > highscore){
 
 highscore = score;
