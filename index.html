@@ -148,7 +148,7 @@ z-index:9999;
 Loading...
 </div>
 <div class="header">
-BANTY Learning
+<span id="typing"></span>
 <div class="tag">
 NEET • JEE • UPSC
 </div>
@@ -355,6 +355,26 @@ document.getElementById("datetime").innerHTML =
 d.toLocaleString();
 
 },1000);
+  var text = "BANTY Learning";
+
+var i = 0;
+
+function typingEffect(){
+
+if(i < text.length){
+
+document.getElementById("typing").innerHTML +=
+text.charAt(i);
+
+i++;
+
+setTimeout(typingEffect,150);
+
+}
+
+}
+
+typingEffect();
 var score = 0;
   var highscore = localStorage.getItem("highscore") || 0;
 
