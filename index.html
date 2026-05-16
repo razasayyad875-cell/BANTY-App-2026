@@ -141,6 +141,7 @@ position:fixed;
 bottom:20px;
 right:20px;
 width:100px;
+        animation:bounce 1s infinite;
 }
 font-size:22px;
 color:#facc15;
@@ -298,6 +299,21 @@ transform:translateY(100vh);
 }
 
   }
+  @keyframes bounce{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+    }
 
   }
 </style>
