@@ -335,9 +335,7 @@ NEET • JEE • UPSC
 </marquee>
 <div class="container">
   <h3 id="datetime"></h3>
-  <h3 id="quote">
-Success Starts With Daily Practice 🚀
-  </h3>
+  <h3 id="quote"></h3>
   <h3 id="greet"></h3>
 <h2 id="score">Score: 0</h2>
   <h3 id="percent">
@@ -562,6 +560,27 @@ setTimeout(typingEffect,150);
 }
 
 typingEffect();
+  var q =
+"Success Starts With Daily Practice 🚀";
+
+var qi = 0;
+
+function quoteEffect(){
+
+if(qi < q.length){
+
+document.getElementById("quote").innerHTML +=
+q.charAt(qi);
+
+qi++;
+
+setTimeout(quoteEffect,100);
+
+}
+
+}
+
+quoteEffect();
   setInterval(function(){
 
 if(document.title=="BANTY Learning"){
