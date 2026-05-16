@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>BANTY Learning</title>
+<title id="title">
+BANTY Learning
+</title>
 <link rel="shortcut icon"
 type="image/png"
 href="https://github.githubassets.com/favicons/favicon.png">
@@ -431,6 +433,19 @@ setTimeout(typingEffect,150);
 }
 
 typingEffect();
+  setInterval(function(){
+
+if(document.title=="BANTY Learning"){
+
+document.title="🚀 BANTY Learning";
+
+}else{
+
+document.title="BANTY Learning";
+
+}
+
+},1000);
 var score = 0;
   var highscore = localStorage.getItem("highscore") || 0;
 var visitors =
