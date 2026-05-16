@@ -88,7 +88,22 @@ color:#38bdf8;
 </head>
 
 <body onload="loading()">
-
+<div id="loader"
+style="
+position:fixed;
+width:100%;
+height:100%;
+background:#0f172a;
+top:0;
+left:0;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+z-index:9999;
+">
+Loading...
+</div>
 <div class="header">
 BANTY Learning
 <div class="tag">
@@ -245,7 +260,12 @@ Made By BANTY Raza 🚀 | NEET • JEE • UPSC Learning App
 <script>
   function loading(){
 
-alert("Loading BANTY Learning...");
+setTimeout(function(){
+
+document.getElementById("loader").style.display =
+"none";
+
+},2000);
 
   }
   alert("Welcome to BANTY Learning 🚀");
