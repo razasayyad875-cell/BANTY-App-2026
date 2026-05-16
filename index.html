@@ -11,6 +11,19 @@ href="https://github.githubassets.com/favicons/favicon.png">
 
 body{
   #stars{
+    .snow{
+position:fixed;
+top:-10px;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+background-image:
+radial-gradient(white 2px, transparent 2px);
+background-size:50px 50px;
+animation:snowfall 10s linear infinite;
+opacity:0.3;
+    }
 position:fixed;
 width:100%;
 height:100%;
@@ -274,6 +287,17 @@ background-position:0% 50%;
 }
 
   }
+  @keyframes snowfall{
+
+from{
+transform:translateY(-100px);
+}
+
+to{
+transform:translateY(100vh);
+}
+
+  }
 
   }
 </style>
@@ -281,6 +305,7 @@ background-position:0% 50%;
 
 <body onload="loading()">
   <div id="stars"></div>
+  <div class="snow"></div>
 <div id="loader"
 style="
 position:fixed;
