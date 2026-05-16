@@ -129,9 +129,7 @@ NEET • JEE • UPSC
   <h3 id="quote">
 Success Starts With Daily Practice 🚀
   </h3>
-  <h3>
-Welcome SAYYAD RAZA 🚀
-  </h3>
+  <h3 id="greet"></h3>
 <h2 id="score">Score: 0</h2>
   <h2 id="highscore">High Score: 0</h2>
   <h3 id="result"></h3>
@@ -282,6 +280,24 @@ document.getElementById("loader").style.display =
 
   }
   alert("Welcome to BANTY Learning 🚀");
+  var h = new Date().getHours();
+
+if(h<12){
+
+document.getElementById("greet").innerHTML =
+"Good Morning SAYYAD RAZA ☀️";
+
+}else if(h<18){
+
+document.getElementById("greet").innerHTML =
+"Good Afternoon SAYYAD RAZA 🌤️";
+
+}else{
+
+document.getElementById("greet").innerHTML =
+"Good Evening SAYYAD RAZA 🌙";
+
+}
   setInterval(function(){
 
 var d = new Date();
