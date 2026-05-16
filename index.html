@@ -150,6 +150,22 @@ Success Starts With Daily Practice 🚀
   <h3 id="percent">
 Completion: 0%
   </h3>
+  <div style="
+width:100%;
+background:#334155;
+border-radius:10px;
+">
+
+<div id="progressbar"
+style="
+width:0%;
+padding:10px;
+background:#22c55e;
+border-radius:10px;
+">
+</div>
+
+</div>
   <h2 id="highscore">High Score: 0</h2>
   <h3 id="result"></h3>
   <h2 id="timer">Time Left: 60</h2>
@@ -396,6 +412,8 @@ document.getElementById("score").innerHTML =
 "Score: " + score;
   document.getElementById("percent").innerHTML =
 "Completion: " + (score*20) + "%";
+  document.getElementById("progressbar").style.width =
+(score*20) + "%";
 if(score > highscore){
 
 highscore = score;
@@ -427,6 +445,8 @@ document.getElementById("score").innerHTML =
 "Score: " + score;
 document.getElementById("percent").innerHTML =
 "Completion: " + (score*20) + "%";
+  document.getElementById("progressbar").style.width =
+(score*20) + "%";
 }else{
 
 btn.style.background="red";
