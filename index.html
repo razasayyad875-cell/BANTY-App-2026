@@ -47,6 +47,7 @@ border-radius:15px;
   border:2px solid #38bdf8;
 box-shadow:0 0 10px rgba(0,0,0,0.5);
   transition:0.3s;
+  animation:float 3s ease-in-out infinite;
 }
   .card:hover{
 transform:scale(1.03);
@@ -122,6 +123,21 @@ color:#38bdf8;
 
 to{
 color:#22c55e;
+}
+
+  }
+  @keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+100%{
+transform:translateY(0px);
 }
 
   }
