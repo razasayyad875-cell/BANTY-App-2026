@@ -126,7 +126,8 @@ align-items:center;
 margin:20px auto;
 font-size:28px;
 box-shadow:0 0 15px #22c55e;
-      animation:pulse 1.5s infinite;
+      animation:pulse 1.5s infinite,
+spin 4s linear infinite;
 }
     #score{
 animation:glowtext 1.5s infinite alternate;
@@ -224,6 +225,17 @@ transform:scale(1);
 100%{color:#38bdf8;}
 
   }
+
+  }
+  @keyframes spin{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
 
   }
 
