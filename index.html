@@ -99,6 +99,12 @@ margin-bottom:20px;
   h3{
 color:#38bdf8;
     marquee{
+      #topbtn{
+position:fixed;
+bottom:20px;
+right:20px;
+width:100px;
+}
 font-size:22px;
 color:#facc15;
 margin-top:10px;
@@ -575,12 +581,21 @@ alert("Next Questions Coming Soon 🚀");
 function showjee(){
 alert("JEE Questions Coming Soon");
 }
+function topFunction(){
 
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+  }
 function showupsc(){
 alert("UPSC Questions Coming Soon");
 }
 
 </script>
-
+<button onclick="topFunction()" id="topbtn">
+⬆ Top
+</button>
 </body>
 </html>
