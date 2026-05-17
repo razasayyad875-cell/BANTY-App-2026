@@ -446,6 +446,9 @@ border-radius:10px;
   <h3 id="visitor">
 Visitors: 0
 </h3>
+  <h3 id="streak">
+🔥 Daily Streak: 0 Days
+</h3>
   <h3 id="result"></h3>
   <h2 id="timer">Time Left: 60</h2>
   <button onclick="darkmode()">
@@ -714,6 +717,27 @@ localStorage.setItem("visitors",visitors);
 
 document.getElementById("visitor").innerHTML =
 "Visitors: " + visitors;
+  var streak =
+localStorage.getItem("streak") || 0;
+
+var lastvisit =
+localStorage.getItem("lastvisit");
+
+var today =
+new Date().toDateString();
+
+if(lastvisit != today){
+
+streak++;
+
+localStorage.setItem("streak",streak);
+
+localStorage.setItem("lastvisit",today);
+
+}
+
+document.getElementById("streak").innerHTML =
+"🔥 Daily Streak: " + streak + " Days";
 document.getElementById("highscore").innerHTML =
 "High Score: " + highscore;
   var time = 60;
