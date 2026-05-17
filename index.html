@@ -259,6 +259,10 @@ transform:translateY(0px);
 }
 
   }
+  #logoanim{
+font-size:80px;
+animation:zoomlogo 2s infinite;
+}
   #loadtext{
 animation:rotate 2s linear infinite;
 display:inline-block;
@@ -369,6 +373,21 @@ background-position:0% 50%;
 }
 
   }
+  @keyframes zoomlogo{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.3);
+}
+
+100%{
+transform:scale(1);
+}
+
+  }
 </style>
 </head>
 
@@ -398,7 +417,14 @@ justify-content:center;
 align-items:center;
 font-size:30px;
 z-index:9999;
-">
+  <div id="logoanim">
+🚀
+</div>
+
+<h1>
+BANTY Learning
+</h1>
+
 <span id="loadtext">
 Loading<span id="dots"></span>
 </span>
