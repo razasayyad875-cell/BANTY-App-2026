@@ -1199,6 +1199,30 @@ alert("UPSC Section Coming Soon 🚀");
 }
 
 }
+  function login(){
+
+var username =
+document.getElementById("name").value;
+
+if(username==""){
+
+alert("Please Enter Name");
+
+}else{
+
+localStorage.setItem("username",username);
+
+document.getElementById("loginpage").style.display =
+"none";
+
+document.getElementById("greet").innerHTML =
+"Welcome " + username + " 🚀";
+
+document.getElementById("welcomesound").play();
+
+}
+
+  }
 </script>
 <button onclick="topFunction()" id="topbtn">
 ⬆ Top
