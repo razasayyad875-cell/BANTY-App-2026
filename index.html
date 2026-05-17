@@ -357,7 +357,7 @@ font-size:30px;
 z-index:9999;
 ">
 <span id="loadtext">
-Loading...
+Loading<span id="dots"></span>
 </span>
 </div>
 <div class="header">
@@ -601,6 +601,22 @@ setTimeout(typingEffect,150);
 }
 
 typingEffect();
+  setInterval(function(){
+
+var dots =
+document.getElementById("dots");
+
+if(dots.innerHTML=="..."){
+
+dots.innerHTML="";
+
+}else{
+
+dots.innerHTML += ".";
+
+}
+
+},500);
   var q =
 "Success Starts With Daily Practice 🚀";
 
