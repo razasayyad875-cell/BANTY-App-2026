@@ -446,7 +446,7 @@ border-radius:10px;
 margin-top:20px;
 ">
 
-<button onclick="login()"
+<button type="button" onclick="login()"
 style="width:85%;">
 Enter App
 </button>
@@ -511,7 +511,9 @@ justify-content:center;
 align-items:center;
 font-size:30px;
 z-index:9999;
-  <div id="logoanim">
+flex-direction:column;
+">
+<div id="logoanim">
 🚀
 </div>
 
@@ -1060,8 +1062,12 @@ document.getElementById("percent").innerHTML =
 btn.style.background="red";
 navigator.vibrate(100);
   document.getElementById("wrongsound").play();
+
 }
-    function check3(ans,btn){
+
+}
+
+function check3(ans,btn){
 
 if(ans=="D"){
 
