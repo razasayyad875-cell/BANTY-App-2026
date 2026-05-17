@@ -120,7 +120,16 @@ background:#0284c7;
 button:active{
 transform:scale(0.95);
 }
-
+#scrollbar{
+position:fixed;
+top:0;
+left:0;
+height:5px;
+width:0%;
+background:#22c55e;
+z-index:9999;
+transition:0.2s;
+}
 .footer{
 margin-top:30px;
 padding:15px;
@@ -363,6 +372,7 @@ z-index:9999;
 Loading<span id="dots"></span>
 </span>
 </div>
+  <div id="scrollbar"></div>
 <div class="header">
 <span id="typing"></span>
 <div class="tag">
@@ -819,6 +829,23 @@ behavior:"smooth"
 });
 
   }
+  window.onscroll = function(){
+
+var winScroll =
+document.body.scrollTop ||
+document.documentElement.scrollTop;
+
+var height =
+document.documentElement.scrollHeight -
+document.documentElement.clientHeight;
+
+var scrolled =
+(winScroll / height) * 100;
+
+document.getElementById("scrollbar").style.width =
+scrolled + "%";
+
+};
 function showupsc(){
 alert("UPSC Questions Coming Soon");
 }
