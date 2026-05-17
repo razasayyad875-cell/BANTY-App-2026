@@ -388,16 +388,129 @@ transform:scale(1);
 }
 
   }
+  .tabs{
+display:flex;
+gap:10px;
+padding:10px;
+}
+
+.tabs button{
+flex:1;
+}
+  #neetbox{
+animation:fade 0.5s;
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0px);
+}
+
+}
 </style>
 </head>
 
 <body onload="loading()">
+  <div id="loginpage" style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#0f172a;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:10000;
+flex-direction:column;
+">
+
+<h1 style="color:#38bdf8;">
+BANTY Learning Login
+</h1>
+
+<input type="text"
+id="name"
+placeholder="Enter Your Name"
+style="
+padding:15px;
+width:80%;
+border-radius:10px;
+margin-top:20px;
+">
+
+<button onclick="login()"
+style="width:85%;">
+Enter App
+</button>
+
+</div>
   <audio id="correctsound"
 src="https://www.soundjay.com/buttons/sounds/button-3.mp3">
 </audio>
 
+<body onload="loading()">
+
+<div id="loginpage" style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#0f172a;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:10000;
+flex-direction:column;
+">
+
+<h1 style="color:#38bdf8;">
+BANTY Learning Login
+</h1>
+
+<input type="text"
+id="name"
+placeholder="Enter Your Name"
+style="
+padding:15px;
+width:80%;
+border-radius:10px;
+margin-top:20px;
+">
+
+<button onclick="login()"
+style="width:85%;">
+Enter App
+</button>
+
+</div>
+
+<audio autoplay loop>
+<source src="music.mp3" type="audio/mp3">
+</audio>
+
+<audio id="correctsound"
+src="https://www.soundjay.com/buttons/sounds/button-3.mp3">
+</audio>
+
 <audio id="wrongsound"
-  <audio id="welcomesound"
+src="https://www.soundjay.com/buttons/sounds/button-10.mp3">
+</audio>
+
+<audio id="welcomesound"
+src="https://www.soundjay.com/buttons/sounds/button-09.mp3">
+</audio>
+
+<div id="stars"></div>
+<div class="snow"></div>
 src="https://www.soundjay.com/buttons/sounds/button-09.mp3">
 </audio>
 src="https://www.soundjay.com/buttons/sounds/button-10.mp3">
@@ -440,6 +553,21 @@ NEET • JEE • UPSC
 🔥 Welcome To BANTY Learning App 🚀
 </marquee>
 <div class="container">
+  <div class="tabs">
+
+<button onclick="openTab('neet')">
+NEET
+</button>
+
+<button onclick="openTab('jee')">
+JEE
+</button>
+
+<button onclick="openTab('upsc')">
+UPSC
+</button>
+
+</div>
   <h3 id="datetime"></h3>
   <h3 id="quote"></h3>
   <h3 id="greet"></h3>
@@ -625,9 +753,42 @@ document.getElementById("loader").style.display =
 "none";
 
 },2000);
+function login(){
 
+var username =
+document.getElementById("name").value;
+
+if(username==""){
+
+alert("Please Enter Name");
+
+}else{
+
+localStorage.setItem("username",username);
+
+document.getElementById("loginpage").style.display =
+"none";
+
+document.getElementById("greet").innerHTML =
+"Welcome " + username + " 🚀";
+
+}
+
+}
   }
   alert("Welcome to BANTY Learning 🚀");
+  var savedname =
+localStorage.getItem("username");
+
+if(savedname){
+
+document.getElementById("loginpage").style.display =
+"none";
+
+document.getElementById("greet").innerHTML =
+"Welcome " + savedname + " 🚀";
+
+}
   document.getElementById("welcomesound").play();
   var h = new Date().getHours();
 
@@ -828,7 +989,7 @@ btn.style.background="green";
 navigator.vibrate(50);
   document.getElementById("correctsound").play();
 score++;
-
+localStorage.setItem("score",score);
 document.getElementById("score").innerHTML =
 "Score: " + score;
   document.getElementById("percent").innerHTML =
@@ -930,7 +1091,25 @@ scrolled + "%";
 function showupsc(){
 alert("UPSC Questions Coming Soon");
 }
+function openTab(tab){
 
+document.getElementById("neetbox").style.display =
+"none";
+
+if(tab=="neet"){
+document.getElementById("neetbox").style.display =
+"block";
+}
+
+if(tab=="jee"){
+alert("JEE Section Coming Soon 🚀");
+}
+
+if(tab=="upsc"){
+alert("UPSC Section Coming Soon 🚀");
+}
+
+}
 </script>
 <button onclick="topFunction()" id="topbtn">
 ⬆ Top
