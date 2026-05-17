@@ -328,6 +328,13 @@ transform:translateY(0px);
 </head>
 
 <body onload="loading()">
+  <audio id="correctsound"
+src="https://www.soundjay.com/buttons/sounds/button-3.mp3">
+</audio>
+
+<audio id="wrongsound"
+src="https://www.soundjay.com/buttons/sounds/button-10.mp3">
+</audio>
   <div id="stars"></div>
   <div class="snow"></div>
 <div id="loader"
@@ -696,6 +703,7 @@ btn.style.background="green";
   document.getElementById("result").innerHTML =
 "Correct Answer ✅";
 navigator.vibrate(50);
+  document.getElementById("correctsound").play();
 score++;
 
 document.getElementById("score").innerHTML =
@@ -759,6 +767,7 @@ document.getElementById("percent").innerHTML =
 
 btn.style.background="red";
 navigator.vibrate(100);
+  document.getElementById("wrongsound").play();
 }
 
 }
