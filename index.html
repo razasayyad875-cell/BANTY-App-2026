@@ -338,6 +338,9 @@ src="https://www.soundjay.com/buttons/sounds/button-3.mp3">
 </audio>
 
 <audio id="wrongsound"
+  <audio id="welcomesound"
+src="https://www.soundjay.com/buttons/sounds/button-09.mp3">
+</audio>
 src="https://www.soundjay.com/buttons/sounds/button-10.mp3">
 </audio>
   <div id="stars"></div>
@@ -555,6 +558,7 @@ document.getElementById("loader").style.display =
 
   }
   alert("Welcome to BANTY Learning 🚀");
+  document.getElementById("welcomesound").play();
   var h = new Date().getHours();
 
 if(h<12){
