@@ -684,37 +684,64 @@ D. None
 <div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
 Q3. Which vitamin is produced by sunlight?
 <br><br>
+
+<button onclick="check3('A',this)">
 A. Vitamin A
-<br>
+</button>
+
+<button onclick="check3('B',this)">
 B. Vitamin B
-<br>
+</button>
+
+<button onclick="check3('C',this)">
 C. Vitamin C
-<br>
+</button>
+
+<button onclick="check3('D',this)">
 D. Vitamin D
+</button>
 </div>
 
 <div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
 Q4. Human body has how many bones?
 <br><br>
+
+<button onclick="check4('A',this)">
 A. 206
-<br>
+</button>
+
+<button onclick="check4('B',this)">
 B. 201
-<br>
+</button>
+
+<button onclick="check4('C',this)">
 C. 210
-<br>
+</button>
+
+<button onclick="check4('D',this)">
 D. 250
+</button>
 </div>
 
 <div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
 Q5. Blood purification occurs in?
 <br><br>
+
+<button onclick="check5('A',this)">
 A. Heart
-<br>
+</button>
+
+<button onclick="check5('B',this)">
 B. Kidney
-<br>
+</button>
+
+<button onclick="check5('C',this)">
 C. Liver
-<br>
+</button>
+
+<button onclick="check5('D',this)">
 D. Lungs
+</button>
 </div>
 </div>
 
@@ -1053,8 +1080,70 @@ btn.style.background="red";
 navigator.vibrate(100);
   document.getElementById("wrongsound").play();
 }
+    function check3(ans,btn){
+
+if(ans=="D"){
+
+btn.style.background="green";
+
+score++;
+
+localStorage.setItem("score",score);
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+}else{
+
+btn.style.background="red";
 
 }
+
+  }
+    function check4(ans,btn){
+
+if(ans=="A"){
+
+btn.style.background="green";
+
+score++;
+
+localStorage.setItem("score",score);
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+}else{
+
+btn.style.background="red";
+
+}
+
+}
+
+function check5(ans,btn){
+
+if(ans=="B"){
+
+btn.style.background="green";
+
+score++;
+
+localStorage.setItem("score",score);
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+}else{
+
+btn.style.background="red";
+
+}
+
+  }
+
+}
+  
   function nextQuestion(){
 
 alert("Next Questions Coming Soon 🚀");
