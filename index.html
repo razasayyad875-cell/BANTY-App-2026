@@ -858,6 +858,24 @@ document.getElementById("score").innerHTML =
 btn.style.background="red";
   }
 }
+  function check6(ans,btn){
+
+if(ans=="C"){
+
+btn.style.background="green";
+
+score++;
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+}else{
+
+btn.style.background="red";
+
+}
+
+  }
   
   function nextQuestion(){
 alert("Next Questions Coming Soon 🚀");
