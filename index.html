@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,9 +7,9 @@ BANTY Learning
 </title>
 <link rel="shortcut icon"
 type="image/png"
-href="https://github.githubassets.com/favicons/favicon.png">
+href="
+https://github.githubassets.com/favicons/favicon.png">
 <style>
-
 body{
 margin:0;
 font-family:Arial;
@@ -19,7 +20,6 @@ background:linear-gradient(
 #1e293b,
 #0f172a
 );
-
 background-size:400% 400%;
 animation:bgmove 10s ease infinite;
 color:white;
@@ -28,7 +28,7 @@ border:4px solid transparent;
 box-shadow:0 0 25px #38bdf8 inset;
 animation:bordermove 5s linear infinite;
 }
-  #stars{
+  #stars{
 position:fixed;
 width:100%;
 height:100%;
@@ -39,8 +39,8 @@ radial-gradient(white 1px, transparent 1px);
 background-size:40px 40px;
 opacity:0.2;
 z-index:-1;
-  }
-  .snow{
+  }
+  .snow{
 position:fixed;
 top:-10px;
 left:0;
@@ -52,47 +52,43 @@ radial-gradient(white 2px, transparent 2px);
 background-size:50px 50px;
 animation:snowfall 10s linear infinite;
 opacity:0.3;
-  }
-  
-   
-
+  }
+  
+   
 .header{
 background:rgba(17,24,39,0.6);
 backdrop-filter:blur(10px);
-  position:sticky;
+  position:sticky;
 top:0;
 z-index:999;
 padding:20px;
 font-size:28px;
 font-weight:bold;
 color:#38bdf8;
-  animation:glow 2s infinite alternate;
-  animation:rainbow 3s infinite;
-  text-shadow:0 0 10px #38bdf8;
+  animation:glow 2s infinite alternate;
+  animation:rainbow 3s infinite;
+  text-shadow:0 0 10px #38bdf8;
 }
-
 .tag{
 font-size:18px;
 margin-top:5px;
 color:#cbd5e1;
 }
-
 .container{
 padding:20px;
 }
-
 .card{
 background:rgba(30,41,59,0.6);
 padding:20px;
 margin:20px;
 border-radius:15px;
-  border:2px solid #38bdf8;
-  backdrop-filter:blur(10px);
+  border:2px solid #38bdf8;
+  backdrop-filter:blur(10px);
 box-shadow:0 0 10px rgba(0,0,0,0.5);
-  transition:0.3s;
-  animation:float 3s ease-in-out infinite;
+  transition:0.3s;
+  animation:float 3s ease-in-out infinite;
 }
-  .card:hover{
+  .card:hover{
 transform:scale(1.03);
 }
 input{
@@ -120,13 +116,11 @@ background-size:300% 300%;
 animation:gradientmove 5s infinite;
 color:white;
 font-weight:bold;
-  box-shadow:0 0 10px #38bdf8;
+  box-shadow:0 0 10px #38bdf8;
 }
-
 button:hover{
 background:#0284c7;
 }
-
 button:active{
 transform:scale(0.95);
 }
@@ -145,7 +139,7 @@ margin-top:30px;
 padding:15px;
 background:#111827;
 color:#94a3b8;
-  font-size:18px;
+  font-size:18px;
 }
 .light{
 background:white;
@@ -155,22 +149,20 @@ color:black;
 color:#facc15;
 margin-bottom:20px;
 }
-  h3{
+  h3{
 color:#38bdf8;
 }
-
 marquee{
 font-size:22px;
 color:#facc15;
 margin-top:10px;
 }
-
 #topbtn{
 position:fixed;
 bottom:20px;
 right:20px;
 width:100px;
-  background:#22c55e;
+  background:#22c55e;
 color:white;
 border:none;
 border-radius:10px;
@@ -178,11 +170,9 @@ box-shadow:0 0 15px #22c55e;
 font-size:18px;
 animation:bounce 1s infinite;
 }
-
 #percent{
 animation:colorchange 2s infinite;
 }
-
 #circle{
 width:120px;
 height:120px;
@@ -197,228 +187,174 @@ box-shadow:0 0 15px #22c55e;
 animation:pulse 1.5s infinite,
 spin 4s linear infinite;
 }
-    #score{
+    #score{
 animation:glowtext 1.5s infinite alternate;
-    }
-  #visitor{
+    }
+  #visitor{
 font-size:22px;
 color:#22c55e;
 animation:glowtext 1s infinite alternate;
 }
-    #datetime{
+    #datetime{
 font-size:20px;
 background:#111827;
 padding:10px;
 border-radius:10px;
 box-shadow:0 0 10px #38bdf8;
 }
-  
-  @keyframes glow{
-
+  
+  @keyframes glow{
 from{
 text-shadow:0 0 10px #38bdf8;
 }
-
 to{
 text-shadow:0 0 25px #38bdf8;
 }
-  }
-  
-    @keyframes colorchange{
-
+  }
+  
+    @keyframes colorchange{
 0%{color:#38bdf8;}
-
 50%{color:#facc15;}
-
 100%{color:#22c55e;}
-
-  }
-  @keyframes glowtext{
-
+  }
+  @keyframes glowtext{
 from{
 color:#38bdf8;
 }
-
 to{
 color:#22c55e;
 }
-
-  }
-  @keyframes float{
-
+  }
+  @keyframes float{
 0%{
 transform:translateY(0px);
 }
-
 50%{
 transform:translateY(-8px);
 }
-
 100%{
 transform:translateY(0px);
 }
-
-  }
-  #logoanim{
+  }
+  #logoanim{
 font-size:80px;
 animation:zoomlogo 2s infinite;
 }
-  #loadtext{
+  #loadtext{
 animation:rotate 2s linear infinite;
 display:inline-block;
-  }
-  @keyframes rotate{
-
+  }
+  @keyframes rotate{
 from{
 transform:rotate(0deg);
 }
-
 to{
 transform:rotate(360deg);
 }
-  }
-    @keyframes pulse{
-
+  }
+    @keyframes pulse{
 0%{
 transform:scale(1);
 }
-
 50%{
 transform:scale(1.08);
 }
-
 100%{
 transform:scale(1);
 }
-
-  }
-  @keyframes rainbow{
-
+  }
+  @keyframes rainbow{
 0%{color:#38bdf8;}
-
 25%{color:#facc15;}
-
 50%{color:#22c55e;}
-
 75%{color:#ef4444;}
-
 100%{color:#38bdf8;}
-
-  }
-
-  @keyframes spin{
-
+  }
+  @keyframes spin{
 from{
 transform:rotate(0deg);
 }
-
 to{
 transform:rotate(360deg);
 }
-
-  }
-  @keyframes gradientmove{
-
+  }
+  @keyframes gradientmove{
 0%{
 background-position:0% 50%;
 }
-
 50%{
 background-position:100% 50%;
 }
-
 100%{
 background-position:0% 50%;
 }
-
-  }
-  @keyframes snowfall{
-
+  }
+  @keyframes snowfall{
 from{
 transform:translateY(-100px);
 }
-
 to{
 transform:translateY(100vh);
 }
-
-  }
-  @keyframes bounce{
-
+  }
+  @keyframes bounce{
 0%{
 transform:translateY(0px);
 }
-
 50%{
 transform:translateY(-10px);
 }
-
 100%{
 transform:translateY(0px);
 }
-
-  }
-  @keyframes bgmove{
-
+  }
+  @keyframes bgmove{
 0%{
 background-position:0% 50%;
 }
-
 50%{
 background-position:100% 50%;
 }
-
 100%{
 background-position:0% 50%;
 }
-
-  }
-  @keyframes zoomlogo{
-
+  }
+  @keyframes zoomlogo{
 0%{
 transform:scale(1);
 }
-
 50%{
 transform:scale(1.3);
 }
-
 100%{
 transform:scale(1);
 }
-
-  }
-  .tabs{
+  }
+  .tabs{
 display:flex;
 gap:10px;
 padding:10px;
 }
-
 .tabs button{
 flex:1;
 }
-  #neetbox{
+  #neetbox{
 animation:fade 0.5s;
 }
-
 @keyframes fade{
-
 from{
 opacity:0;
 transform:translateY(20px);
 }
-
 to{
 opacity:1;
 transform:translateY(0px);
 }
-
 }
 </style>
 </head>
-
 <body onload="loading()">
-  <div id="loginpage" style="
+  <div id="loginpage" style="
 position:fixed;
 top:0;
 left:0;
@@ -431,16 +367,10 @@ align-items:center;
 z-index:10000;
 flex-direction:column;
 ">
-
-
-  
-
-
-
+  
 <h1 style="color:#38bdf8;">
 BANTY Learning Login
 </h1>
-
 <input type="text"
 id="name"
 placeholder="Enter Your Name"
@@ -450,33 +380,29 @@ width:80%;
 border-radius:10px;
 margin-top:20px;
 ">
-
 <button onclick="login()"
 style="width:85%;">
 Enter App
 </button>
-
 </div>
-
 <audio autoplay loop>
 <source src="music.mp3" type="audio/mp3">
 </audio>
-
 <audio id="correctsound"
-src="https://www.soundjay.com/buttons/sounds/button-3.mp3">
+src="
+https://www.soundjay.com/buttons/sounds/button-3.mp3">
 </audio>
-
 <audio id="wrongsound"
-src="https://www.soundjay.com/buttons/sounds/button-10.mp3">
+src="
+https://www.soundjay.com/buttons/sounds/button-10.mp3">
 </audio>
-
 <audio id="welcomesound"
-src="https://www.soundjay.com/buttons/sounds/button-09.mp3">
+src="
+https://www.soundjay.com/buttons/sounds/button-09.mp3">
 </audio>
-
 <div id="stars"></div>
 <div class="snow"></div>
-  
+  
 <div id="loader"
 style="
 position:fixed;
@@ -492,21 +418,17 @@ font-size:30px;
 z-index:9999;
 flex-direction:column;
 ">
-
 <div id="logoanim">
 🚀
 </div>
-
 <h1>
 BANTY Learning
 </h1>
-
 <span id="loadtext">
 Loading<span id="dots"></span>
 </span>
-
 </div>
-  <div id="scrollbar"></div>
+  <div id="scrollbar"></div>
 <div class="header">
 <span id="typing"></span>
 <div class="tag">
@@ -517,39 +439,32 @@ NEET • JEE • UPSC
 🔥 Welcome To BANTY Learning App 🚀
 </marquee>
 <div class="container">
-  <div class="tabs">
-
+  <div class="tabs">
 <button onclick="openTab('neet')">
 NEET
 </button>
-
 <button onclick="openTab('jee')">
 JEE
 </button>
-
 <button onclick="openTab('upsc')">
 UPSC
 </button>
-
 </div>
-  <h3 id="datetime"></h3>
-  <h3 id="quote"></h3>
-  <h3 id="greet"></h3>
+  <h3 id="datetime"></h3>
+  <h3 id="quote"></h3>
+  <h3 id="greet"></h3>
 <h2 id="score">Score: 0</h2>
-  <h3 id="percent">
+  <h3 id="percent">
 Completion: 0%
-  </h3>
-  <div id="circle">
-
+  </h3>
+  <div id="circle">
 0%
-
-  </div>
-  <div style="
+  </div>
+  <div style="
 width:100%;
 background:#334155;
 border-radius:10px;
 ">
-
 <div id="progressbar"
 style="
 width:0%;
@@ -558,25 +473,23 @@ background:#22c55e;
 border-radius:10px;
 ">
 </div>
-
 </div>
-  <h2 id="highscore">High Score: 0</h2>
-  <h3 id="visitor">
+  <h2 id="highscore">High Score: 0</h2>
+  <h3 id="visitor">
 Visitors: 0
 </h3>
-  <h3 id="streak">
+  <h3 id="streak">
 🔥 Daily Streak: 0 Days
 </h3>
-  <h3 id="result"></h3>
-  <h2 id="timer">Time Left: 60</h2>
-  <button onclick="darkmode()">
+  <h3 id="result"></h3>
+  <h2 id="timer">Time Left: 60</h2>
+  <button onclick="darkmode()">
 Dark / Light Mode
-  </button>
-  <button onclick="restartQuiz()">
+  </button>
+  <button onclick="restartQuiz()">
 Restart Quiz
-  </button>
-  <div style="width:100%;background:#334155;border-radius:10px;">
-
+  </button>
+  <div style="width:100%;background:#334155;border-radius:10px;">
 <div id="progress"
 style="
 width:100%;
@@ -585,16 +498,13 @@ background:#38bdf8;
 border-radius:10px;
 ">
 </div>
-
 </div>
 <div class="card">
 <h2>NEET Previous Year Questions</h2>
 <p>Biology • Physics • Chemistry</p>
-
 <button onclick="showneet()">
 Open NEET Questions
 </button>
-
 <div id="neetbox"
 style="
 display:none;
@@ -605,569 +515,382 @@ animation:float 1s infinite;
 NEET Quiz Started 🚀
 </h3>
 <div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
-
 Q1. Human heart has how many chambers?
-
 <br><br>
-
 <button onclick="check1('A',this)">A. 2</button>
-
 <button onclick="check1('B',this)">B. 3</button>
-
 <button onclick="check1('C',this)">C. 4</button>
-
 <button onclick="check1('D',this)">D. 5</button>
-
 </div>
 <button onclick="nextQuestion()">
 Next Question
 </button>
 <div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
-
 Q2. DNA ka full form kya hai?
-
 <br><br>
-
 <button onclick="check2('A',this)">
 A. Deoxyribo Nucleic Acid
 </button>
-
 <button onclick="check2('B',this)">
 B. Dynamic Nuclear Acid
 </button>
-
 <button onclick="check2('C',this)">
 C. Double Nitrogen Atom
 </button>
-
 <button onclick="check2('D',this)">
 D. None
 </button>
-
 </div>
 <div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
 Q3. Which vitamin is produced by sunlight?
 <br><br>
-
 <button onclick="check3('A',this)">
 A. Vitamin A
 </button>
-
 <button onclick="check3('B',this)">
 B. Vitamin B
 </button>
-
 <button onclick="check3('C',this)">
 C. Vitamin C
 </button>
-
 <button onclick="check3('D',this)">
 D. Vitamin D
 </button>
 </div>
-
 <div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
 Q4. Human body has how many bones?
 <br><br>
-
 <button onclick="check4('A',this)">
 A. 206
 </button>
-
 <button onclick="check4('B',this)">
 B. 201
 </button>
-
 <button onclick="check4('C',this)">
 C. 210
 </button>
-
 <button onclick="check4('D',this)">
 D. 250
 </button>
 </div>
-
 <div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
 Q5. Blood purification occurs in?
 <br><br>
-
 <button onclick="check5('A',this)">
 A. Heart
 </button>
-
 <button onclick="check5('B',this)">
 B. Kidney
 </button>
-
 <button onclick="check5('C',this)">
 C. Liver
 </button>
-
 <button onclick="check5('D',this)">
 D. Lungs
 </button>
 </div>
 </div>
-
 </div>
-
 <div class="card">
 <h2>JEE Previous Year Questions</h2>
 <p>Math • Physics • Chemistry</p>
-
 <button onclick="showjee()">
 Open JEE Questions
 </button>
 </div>
-
 <div class="card">
 <h2>UPSC Previous Year Questions</h2>
 <p>History • Polity • Geography</p>
-
 <button onclick="showupsc()">
 Open UPSC Questions
 </button>
 </div>
-
 </div>
-
 <div class="footer">
 Made By BANTY Raza 🚀 | NEET • JEE • UPSC Learning App
 </div>
-
 <script>
 function loading(){
-
 setTimeout(function(){
-
 document.getElementById("loader").style.display =
 "none";
-
 },2000);
-
 }
-  alert("Welcome to BANTY Learning 🚀");
-  var savedname =
+  alert("Welcome to BANTY Learning 🚀");
+  var savedname =
 localStorage.getItem("username");
-
 if(savedname){
-
 document.getElementById("loginpage").style.display =
 "none";
-
 document.getElementById("greet").innerHTML =
 "Welcome " + savedname + " 🚀";
-
 }
-  document.getElementById("welcomesound").play();
-  var h = new Date().getHours();
-
+  document.getElementById("welcomesound").play();
+  var h = new Date().getHours();
 if(h<12){
-
 document.getElementById("greet").innerHTML =
 "Good Morning SAYYAD RAZA ☀️";
-
 }else if(h<18){
-
 document.getElementById("greet").innerHTML =
 "Good Afternoon SAYYAD RAZA 🌤️";
-
 }else{
-
 document.getElementById("greet").innerHTML =
 "Good Evening SAYYAD RAZA 🌙";
-
 }
-  setInterval(function(){
-
+  setInterval(function(){
 var d = new Date();
-
 document.getElementById("datetime").innerHTML =
 d.toLocaleString();
-
 },1000);
-  var text = "BANTY Learning";
-
+  var text = "BANTY Learning";
 var i = 0;
-
 function typingEffect(){
-
 if(i < text.length){
-
 document.getElementById("typing").innerHTML +=
 text.charAt(i);
-
 i++;
-
 setTimeout(typingEffect,150);
-
 }
-
 }
-
 typingEffect();
-  setInterval(function(){
-
+  setInterval(function(){
 var dots =
 document.getElementById("dots");
-
 if(dots.innerHTML=="..."){
-
 dots.innerHTML="";
-
 }else{
-
 dots.innerHTML += ".";
-
 }
-
 },500);
-  var q =
+  var q =
 "Success Starts With Daily Practice 🚀";
-
 var qi = 0;
-
 function quoteEffect(){
-
 if(qi < q.length){
-
 document.getElementById("quote").innerHTML +=
 q.charAt(qi);
-
 qi++;
-
 setTimeout(quoteEffect,100);
-
 }
-
 }
-
 quoteEffect();
-  setTimeout(function(){
-
+  setTimeout(function(){
 alert(
 "📚 Daily Practice = Success 🚀"
 );
-
 },5000);
-  setInterval(function(){
-
+  setInterval(function(){
 if(document.title=="BANTY Learning"){
-
 document.title="🚀 BANTY Learning";
-
 }else{
-
 document.title="BANTY Learning";
-
 }
-
 },1000);
 var score = 0;
-  var highscore = localStorage.getItem("highscore") || 0;
+  var highscore = localStorage.getItem("highscore") || 0;
 var visitors =
 localStorage.getItem("visitors") || 0;
-
 visitors++;
-
 localStorage.setItem("visitors",visitors);
-
 document.getElementById("visitor").innerHTML =
 "Visitors: " + visitors;
-  var streak =
+  var streak =
 localStorage.getItem("streak") || 0;
-
 var lastvisit =
 localStorage.getItem("lastvisit");
-
 var today =
 new Date().toDateString();
-
 if(lastvisit != today){
-
 streak++;
-
 localStorage.setItem("streak",streak);
-
 localStorage.setItem("lastvisit",today);
-
 }
-
 document.getElementById("streak").innerHTML =
 "🔥 Daily Streak: " + streak + " Days";
 document.getElementById("highscore").innerHTML =
 "High Score: " + highscore;
-  var time = 60;
-
+  var time = 60;
 setInterval(function(){
-
 time--;
 document.getElementById("progress").style.width =
 time + "%";
 document.getElementById("timer").innerHTML =
 "Time Left: " + time;
-
 if(time<=0){
-
 if(score>=5){
-
 alert("Excellent 🎉\nYour Score: " + score);
-
 }else if(score>=3){
-
 alert("Good 👍\nYour Score: " + score);
-
 }else{
-
 alert("Try Again 😢\nYour Score: " + score);
-
 }
-
 location.reload();
-
 }
-
 },1000);
-  function darkmode(){
-
+  function darkmode(){
 document.body.classList.toggle("light");
-
-  }
-  function restartQuiz(){
-
+  }
+  function restartQuiz(){
 location.reload();
-
-  }
+  }
 function showneet(){
-
 var x = document.getElementById("neetbox");
-
 if(x.style.display=="none"){
 x.style.display="block";
 }else{
 x.style.display="none";
 }
-
 }
 function check1(ans,btn){
-
 if(ans=="C"){
-
 btn.style.background="green";
-  document.getElementById("result").innerHTML =
+  document.getElementById("result").innerHTML =
 "Correct Answer ✅";
 navigator.vibrate(50);
-  document.getElementById("correctsound").play();
+  document.getElementById("correctsound").play();
 score++;
 localStorage.setItem("score",score);
 document.getElementById("score").innerHTML =
 "Score: " + score;
-  document.getElementById("percent").innerHTML =
+  document.getElementById("percent").innerHTML =
 "Completion: " + (score*20) + "%";
-  document.getElementById("progressbar").style.width =
+  document.getElementById("progressbar").style.width =
 (score*20) + "%";
-  document.getElementById("circle").innerHTML =
+  document.getElementById("circle").innerHTML =
 (score*20) + "%";
-  if(score>=1){
+  if(score>=1){
 document.getElementById("circle").style.borderColor =
 "#22c55e";
 }
-
 if(score>=3){
 document.getElementById("circle").style.borderColor =
 "#facc15";
 }
-
 if(score>=5){
 document.getElementById("circle").style.borderColor =
 "#ef4444";
-  }
+  }
 if(score > highscore){
-
 highscore = score;
-
 localStorage.setItem("highscore",highscore);
-
 document.getElementById("highscore").innerHTML =
 "High Score: " + highscore;
-
 }
 }else{
-
 btn.style.background="red";
-  document.getElementById("result").innerHTML =
+  document.getElementById("result").innerHTML =
 "Wrong Answer ❌";
 navigator.vibrate(100);
 }
-
 }
-  function check2(ans,btn){
-
+  function check2(ans,btn){
 if(ans=="A"){
-
 btn.style.background="green";
 navigator.vibrate(50);
 score++;
-
 document.getElementById("score").innerHTML =
 "Score: " + score;
 document.getElementById("percent").innerHTML =
 "Completion: " + (score*20) + "%";
-  document.getElementById("progressbar").style.width =
+  document.getElementById("progressbar").style.width =
 (score*20) + "%";
-  document.getElementById("circle").innerHTML =
+  document.getElementById("circle").innerHTML =
 (score*20) + "%";
 }else{
-
 btn.style.background="red";
 navigator.vibrate(100);
-  document.getElementById("wrongsound").play();
-
+  document.getElementById("wrongsound").play();
 }
-
 }
-
 function check3(ans,btn){
-
 if(ans=="D"){
-
 btn.style.background="green";
-
 score++;
-
 localStorage.setItem("score",score);
-
 document.getElementById("score").innerHTML =
 "Score: " + score;
-
 }else{
-
 btn.style.background="red";
-
 }
-
-  }
-    function check4(ans,btn){
-
+  }
+    function check4(ans,btn){
 if(ans=="A"){
-
 btn.style.background="green";
-
 score++;
-
 localStorage.setItem("score",score);
-
 document.getElementById("score").innerHTML =
 "Score: " + score;
-
 }else{
-
 btn.style.background="red";
-
 }
-
 }
-
 function check5(ans,btn){
-
 if(ans=="B"){
-
 btn.style.background="green";
-
 score++;
-
 localStorage.setItem("score",score);
-
 document.getElementById("score").innerHTML =
 "Score: " + score;
-
 }else{
-
 btn.style.background="red";
-
-  }
-
+  }
 }
-  
-  function nextQuestion(){
-
+  
+  function nextQuestion(){
 alert("Next Questions Coming Soon 🚀");
-
 }
 function showjee(){
 alert("JEE Questions Coming Soon");
 }
 function topFunction(){
-
 window.scrollTo({
 top:0,
 behavior:"smooth"
 });
-
-  }
-  window.onscroll = function(){
-
+  }
+  window.onscroll = function(){
 var winScroll =
 document.body.scrollTop ||
 document.documentElement.scrollTop;
-
 var height =
 document.documentElement.scrollHeight -
 document.documentElement.clientHeight;
-
 var scrolled =
 (winScroll / height) * 100;
-
 document.getElementById("scrollbar").style.width =
 scrolled + "%";
-
 };
 function showupsc(){
 alert("UPSC Questions Coming Soon");
 }
 function openTab(tab){
-
 document.getElementById("neetbox").style.display =
 "none";
-
 if(tab=="neet"){
 document.getElementById("neetbox").style.display =
 "block";
 }
-
 if(tab=="jee"){
 alert("JEE Section Coming Soon 🚀");
 }
-
 if(tab=="upsc"){
 alert("UPSC Section Coming Soon 🚀");
 }
-
 }
-  function login(){
-
+  function login(){
 var username =
 document.getElementById("name").value;
-
 if(username==""){
-
 alert("Please Enter Name");
-
 }else{
-
 localStorage.setItem("username",username);
-
 document.getElementById("loginpage").style.display =
 "none";
-
 document.getElementById("greet").innerHTML =
 "Welcome " + username + " 🚀";
-
 document.getElementById("welcomesound").play();
-
 }
-
-  }
+  }
 </script>
 <button onclick="topFunction()" id="topbtn">
 ⬆ Top
