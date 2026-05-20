@@ -680,21 +680,6 @@ D. 5.14
 </div>
 
 </div>
-  <div id="jeebox"
-style="
-display:none;
-margin-top:15px;
-animation:float 1s infinite;
-">
-
-<h3>
-JEE Quiz Started 🚀
-</h3>
-
-<div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
-
-Q1. What is value of 2 + 2 ?
-
 <br><br>
 
 <button onclick="checkjee1('A',this)">
@@ -1091,24 +1076,6 @@ var scrolled =
 document.getElementById("scrollbar").style.width =
 scrolled + "%";
 };
-  function checkjee1(ans,btn){
-
-if(ans=="C"){
-
-btn.style.background="green";
-
-score++;
-
-document.getElementById("score").innerHTML =
-"Score: " + score;
-
-}else{
-
-btn.style.background="red";
-
-}
-
-}
 function showupsc(){
 
 var x = document.getElementById("upscbox");
@@ -1125,18 +1092,23 @@ x.style.display="none";
 
 }
 function openTab(tab){
-document.getElementById("neetbox").style.display =
-"none";
+
+document.getElementById("neetbox").style.display = "none";
+document.getElementById("jeebox").style.display = "none";
+document.getElementById("upscbox").style.display = "none";
+
 if(tab=="neet"){
-document.getElementById("neetbox").style.display =
-"block";
+document.getElementById("neetbox").style.display = "block";
 }
+
 if(tab=="jee"){
-alert("JEE Section Coming Soon 🚀");
+document.getElementById("jeebox").style.display = "block";
 }
+
 if(tab=="upsc"){
-alert("UPSC Section Coming Soon 🚀");
+document.getElementById("upscbox").style.display = "block";
 }
+
 }
   function login(){
 var username =
