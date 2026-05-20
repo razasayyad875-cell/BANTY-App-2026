@@ -373,6 +373,15 @@ BANTY Learning Login
 <input type="text"
 id="name"
 placeholder="Enter Your Name"
+  <input type="password"
+id="pass"
+placeholder="Enter Password"
+style="
+padding:15px;
+width:80%;
+border-radius:10px;
+margin-top:20px;
+">
 style="
 padding:15px;
 width:80%;
@@ -1110,19 +1119,37 @@ document.getElementById("upscbox").style.display = "block";
 
 }
   function login(){
+
 var username =
 document.getElementById("name").value;
+
+var password =
+document.getElementById("pass").value;
+
 if(username==""){
-alert("Please Enter Name");
-}else{
+alert("Enter Username");
+return;
+}
+
+if(password=="12345"){
+
 localStorage.setItem("username",username);
+
 document.getElementById("loginpage").style.display =
 "none";
+
 document.getElementById("greet").innerHTML =
 "Welcome " + username + " 🚀";
+
 document.getElementById("welcomesound").play();
+
+}else{
+
+alert("Wrong Password ❌");
+
 }
-  }
+
+}
 </script>
 <button onclick="topFunction()" id="topbtn">
 ⬆ Top
