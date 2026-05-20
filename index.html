@@ -680,6 +680,42 @@ D. 5.14
 </div>
 
 </div>
+  <div id="jeebox"
+style="
+display:none;
+margin-top:15px;
+animation:float 1s infinite;
+">
+
+<h3>
+JEE Quiz Started 🚀
+</h3>
+
+<div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
+
+Q1. What is value of 2 + 2 ?
+
+<br><br>
+
+<button onclick="checkjee1('A',this)">
+A. 2
+</button>
+
+<button onclick="checkjee1('B',this)">
+B. 3
+</button>
+
+<button onclick="checkjee1('C',this)">
+C. 4
+</button>
+
+<button onclick="checkjee1('D',this)">
+D. 5
+</button>
+
+</div>
+
+</div>
 <div class="card">
 <h2>UPSC Previous Year Questions</h2>
 <p>History • Polity • Geography</p>
@@ -1033,6 +1069,15 @@ function showjee(){
 var x = document.getElementById("jeebox");
 
 if(x.style.display=="none"){
+x.style.display="block";
+}else{
+x.style.display="none";
+}
+
+}
+var x = document.getElementById("jeebox");
+
+if(x.style.display=="none"){
 
 x.style.display="block";
 
@@ -1061,6 +1106,24 @@ var scrolled =
 document.getElementById("scrollbar").style.width =
 scrolled + "%";
 };
+  function checkjee1(ans,btn){
+
+if(ans=="C"){
+
+btn.style.background="green";
+
+score++;
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+}else{
+
+btn.style.background="red";
+
+}
+
+}
 function showupsc(){
 
 var x = document.getElementById("upscbox");
