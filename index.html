@@ -613,6 +613,29 @@ D. Kidney
 
 </div>
 </div>
+  <div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
+
+Q7. Father of Biology?
+
+<br><br>
+
+<button onclick="check7('A',this)">
+A. Newton
+</button>
+
+<button onclick="check7('B',this)">
+B. Aristotle
+</button>
+
+<button onclick="check7('C',this)">
+C. Einstein
+</button>
+
+<button onclick="check7('D',this)">
+D. Darwin
+</button>
+
+</div>
 </div>
 <div class="card">
 <h2>JEE Previous Year Questions</h2>
@@ -962,7 +985,24 @@ document.getElementById("score").innerHTML =
 btn.style.background="red";
 
 }
+function check7(ans,btn){
 
+if(ans=="B"){
+
+btn.style.background="green";
+
+score++;
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+}else{
+
+btn.style.background="red";
+
+}
+
+}
   }
     function checkupsc1(ans,btn){
 
