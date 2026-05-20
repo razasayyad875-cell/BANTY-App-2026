@@ -664,6 +664,42 @@ D. 5.14
 Open UPSC Questions
 </button>
 </div>
+  <div id="upscbox"
+style="
+display:none;
+margin-top:15px;
+animation:float 1s infinite;
+">
+
+<h3>
+UPSC Quiz Started 🚀
+</h3>
+
+<div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
+
+Q1. India ka rashtriya pashu kaun hai?
+
+<br><br>
+
+<button onclick="checkupsc1('A',this)">
+A. Lion
+</button>
+
+<button onclick="checkupsc1('B',this)">
+B. Tiger
+</button>
+
+<button onclick="checkupsc1('C',this)">
+C. Elephant
+</button>
+
+<button onclick="checkupsc1('D',this)">
+D. Horse
+</button>
+
+</div>
+
+</div>
 </div>
 <div class="footer">
 Made By BANTY Raza 🚀 | NEET • JEE • UPSC Learning App
@@ -928,6 +964,24 @@ btn.style.background="red";
 }
 
   }
+    function checkupsc1(ans,btn){
+
+if(ans=="B"){
+
+btn.style.background="green";
+
+score++;
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+}else{
+
+btn.style.background="red";
+
+}
+
+}
 
   }
   
@@ -968,7 +1022,19 @@ document.getElementById("scrollbar").style.width =
 scrolled + "%";
 };
 function showupsc(){
-alert("UPSC Questions Coming Soon");
+
+var x = document.getElementById("upscbox");
+
+if(x.style.display=="none"){
+
+x.style.display="block";
+
+}else{
+
+x.style.display="none";
+
+}
+
 }
 function openTab(tab){
 document.getElementById("neetbox").style.display =
