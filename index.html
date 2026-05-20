@@ -507,6 +507,9 @@ Dark / Light Mode
   <button onclick="restartQuiz()">
 Restart Quiz
   </button>
+<button onclick="logout()">
+Logout
+</button>
   <div style="width:100%;background:#334155;border-radius:10px;">
 <div id="progress"
 style="
@@ -890,6 +893,13 @@ document.body.classList.toggle("light");
   function restartQuiz(){
 location.reload();
   }
+  function logout(){
+
+localStorage.removeItem("username");
+
+location.reload();
+
+}
 function showneet(){
 var x = document.getElementById("neetbox");
 if(x.style.display=="none"){
