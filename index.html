@@ -621,6 +621,42 @@ D. Kidney
 Open JEE Questions
 </button>
 </div>
+  <div id="jeebox"
+style="
+display:none;
+margin-top:15px;
+animation:float 1s infinite;
+">
+
+<h3>
+JEE Quiz Started 🚀
+</h3>
+
+<div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
+
+Q1. Value of π ?
+
+<br><br>
+
+<button onclick="checkjee1('A',this)">
+A. 2.14
+</button>
+
+<button onclick="checkjee1('B',this)">
+B. 3.14
+</button>
+
+<button onclick="checkjee1('C',this)">
+C. 4.14
+</button>
+
+<button onclick="checkjee1('D',this)">
+D. 5.14
+</button>
+
+</div>
+
+</div>
 <div class="card">
 <h2>UPSC Previous Year Questions</h2>
 <p>History • Polity • Geography</p>
@@ -874,6 +910,24 @@ document.getElementById("score").innerHTML =
 btn.style.background="red";
 
 }
+    function checkjee1(ans,btn){
+
+if(ans=="B"){
+
+btn.style.background="green";
+
+score++;
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+}else{
+
+btn.style.background="red";
+
+}
+
+  }
 
   }
   
@@ -881,7 +935,19 @@ btn.style.background="red";
 alert("Next Questions Coming Soon 🚀");
 }
 function showjee(){
-alert("JEE Questions Coming Soon");
+
+var x = document.getElementById("jeebox");
+
+if(x.style.display=="none"){
+
+x.style.display="block";
+
+}else{
+
+x.style.display="none";
+
+}
+
 }
 function topFunction(){
 window.scrollTo({
