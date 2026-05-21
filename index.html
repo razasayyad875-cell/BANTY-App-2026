@@ -471,6 +471,7 @@ UPSC
   <h3 id="datetime"></h3>
   <h3 id="quote"></h3>
   <h3 id="greet"></h3>
+  <h3 id="profile"></h3>
 <h2 id="score">Score: 0</h2>
   <h3 id="percent">
 Completion: 0%
@@ -784,6 +785,8 @@ document.getElementById("loginpage").style.display =
 "none";
 document.getElementById("greet").innerHTML =
 "Welcome " + savedname + " 🚀";
+document.getElementById("profile").innerHTML =
+"👤 User: " + savedname;
 }
   document.getElementById("welcomesound").play();
   var h = new Date().getHours();
@@ -1160,7 +1163,8 @@ document.getElementById("loginpage").style.display =
 
 document.getElementById("greet").innerHTML =
 "Welcome " + username + " 🚀";
-
+document.getElementById("profile").innerHTML =
+"👤 User: " + username;
 document.getElementById("welcomesound").play();
 
 }else{
