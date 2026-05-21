@@ -533,6 +533,9 @@ Dark / Light Mode
   <button onclick="restartQuiz()">
 Restart Quiz
   </button>
+  <button onclick="certificate()">
+🎓 Get Certificate
+</button>
 <button onclick="logout()">
 Logout
 </button>
@@ -1226,6 +1229,18 @@ document.getElementById("profilepic");
 
 image.src =
 URL.createObjectURL(event.target.files[0]);
+
+}
+function certificate(){
+
+var username =
+localStorage.getItem("username");
+
+alert(
+"🏆 Certificate Generated!\n\nCongratulations " 
++ username +
+"\nYou completed BANTY Learning Quiz 🚀"
+);
 
 }
 </script>
