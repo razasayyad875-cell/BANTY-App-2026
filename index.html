@@ -499,6 +499,25 @@ UPSC
   <h3 id="datetime"></h3>
   <h3 id="quote"></h3>
   <h3 id="greet"></h3>
+<br>
+
+<img id="profilepic"
+src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+style="
+width:120px;
+height:120px;
+border-radius:50%;
+border:4px solid #38bdf8;
+box-shadow:0 0 15px #38bdf8;
+object-fit:cover;
+">
+
+<br><br>
+
+<input type="file"
+id="uploadpic"
+accept="image/*"
+onchange="loadProfile(event)">
   <div class="card">
 <h2>👤 User Profile</h2>
 <img
@@ -592,6 +611,12 @@ Beginner 🚀
 
 </div>
   <h3 id="result"></h3>
+<h2 id="achievement"
+style="
+color:#facc15;
+text-shadow:0 0 10px #facc15;
+">
+</h2>
 <div id="finalresult"
 style="
 display:none;
@@ -980,6 +1005,13 @@ document.getElementById("splash").style.display =
   alert("Welcome to BANTY Learning 🚀");
   var savedname =
 localStorage.getItem("username");
+var savedpic =
+localStorage.getItem("profilepic");
+
+if(savedpic){
+document.getElementById("profilepic").src =
+savedpic;
+}
 if(savedname){
 document.getElementById("loginpage").style.display =
 "none";
@@ -1140,6 +1172,7 @@ localStorage.getItem("username") +
 "\nFinal Score: " + score
 );
 }else if(score>=3){
+  showachievement("🥈 Silver Rank Unlocked!");
 alert("Good 👍\nYour Score: " + score);
 }else{
 alert("Try Again 😢\nYour Score: " + score);
@@ -1217,6 +1250,7 @@ document.getElementById("leaderboardscore").innerHTML =
   document.getElementById("circle").innerHTML =
 (score*20) + "%";
   if(score>=1){
+    showachievement("🥉 Bronze Rank Unlocked!");
 document.getElementById("circle").style.borderColor =
 "#22c55e";
 }
@@ -1572,6 +1606,19 @@ btn.style.background="red";
 alert(text);
 
 }
+function showachievement(text){
+
+document.getElementById("achievement").innerHTML =
+text;
+
+setTimeout(function(){
+
+document.getElementById("achievement").innerHTML =
+"";
+
+},3000);
+
+}
   function nextQuestion(){
 alert("Next Questions Coming Soon 🚀");
 }
@@ -1636,6 +1683,20 @@ document.getElementById("jeebox").style.display = "block";
 if(tab=="upsc"){
 document.getElementById("upscbox").style.display = "block";
 }
+
+}
+function loadProfile(event){
+
+var image =
+document.getElementById("profilepic");
+
+image.src =
+URL.createObjectURL(event.target.files[0]);
+
+localStorage.setItem(
+"profilepic",
+image.src
+);
 
 }
   function login(){
@@ -1723,7 +1784,7 @@ document.getElementById("finalscore").innerHTML =
 "Your Score: " + score;
 
 if(score>=5){
-
+showachievement("🏆 Expert Level Reached!");
 document.getElementById("finalbadge").innerHTML =
 "🏆 Expert Level";
 
