@@ -516,6 +516,19 @@ border-radius:10px;
 </div>
 </div>
   <h2 id="highscore">High Score: 0</h2>
+<div class="card">
+
+<h2>🏆 Leaderboard</h2>
+
+<h3 id="leaderboardname">
+Player: Unknown
+</h3>
+
+<h3 id="leaderboardscore">
+Score: 0
+</h3>
+
+</div>
 <h2 id="leaderboard">
 🏆 Leader: None
 </h2>
@@ -813,6 +826,11 @@ document.getElementById("loginpage").style.display =
 "none";
 document.getElementById("greet").innerHTML =
 "Welcome " + savedname + " 🚀";
+document.getElementById("leaderboardname").innerHTML =
+"Player: " + savedname;
+
+document.getElementById("leaderboardscore").innerHTML =
+"Score: " + score;
 document.getElementById("showname").innerHTML =
 "Name: " + savedname;
 document.getElementById("profile").innerHTML =
@@ -961,6 +979,8 @@ score++;
 localStorage.setItem("score",score);
 document.getElementById("score").innerHTML =
 "Score: " + score;
+document.getElementById("leaderboardscore").innerHTML =
+"Score: " + score;
   document.getElementById("percent").innerHTML =
 "Completion: " + (score*20) + "%";
   document.getElementById("progressbar").style.width =
@@ -999,6 +1019,8 @@ navigator.vibrate(50);
 score++;
 document.getElementById("score").innerHTML =
 "Score: " + score;
+document.getElementById("leaderboardscore").innerHTML =
+"Score: " + score;
 document.getElementById("percent").innerHTML =
 "Completion: " + (score*20) + "%";
   document.getElementById("progressbar").style.width =
@@ -1018,6 +1040,8 @@ score++;
 localStorage.setItem("score",score);
 document.getElementById("score").innerHTML =
 "Score: " + score;
+document.getElementById("leaderboardscore").innerHTML =
+"Score: " + score;
 }else{
 btn.style.background="red";
 }
@@ -1029,6 +1053,8 @@ score++;
 localStorage.setItem("score",score);
 document.getElementById("score").innerHTML =
 "Score: " + score;
+document.getElementById("leaderboardscore").innerHTML =
+"Score: " + score;
 }else{
 btn.style.background="red";
 }
@@ -1039,6 +1065,8 @@ btn.style.background="green";
 score++;
 localStorage.setItem("score",score);
 document.getElementById("score").innerHTML =
+"Score: " + score;
+document.getElementById("leaderboardscore").innerHTML =
 "Score: " + score;
 }else{
 btn.style.background="red";
@@ -1054,7 +1082,8 @@ score++;
 
 document.getElementById("score").innerHTML =
 "Score: " + score;
-
+document.getElementById("leaderboardscore").innerHTML =
+"Score: " + score;
 }else{
 
 btn.style.background="red";
@@ -1070,7 +1099,8 @@ score++;
 
 document.getElementById("score").innerHTML =
 "Score: " + score;
-
+document.getElementById("leaderboardscore").innerHTML =
+"Score: " + score;
 }else{
 
 btn.style.background="red";
@@ -1087,7 +1117,8 @@ score++;
 
 document.getElementById("score").innerHTML =
 "Score: " + score;
-
+document.getElementById("leaderboardscore").innerHTML =
+"Score: " + score;
 }else{
 
 btn.style.background="red";
@@ -1105,7 +1136,8 @@ score++;
 
 document.getElementById("score").innerHTML =
 "Score: " + score;
-
+document.getElementById("leaderboardscore").innerHTML =
+"Score: " + score;
 }else{
 
 btn.style.background="red";
@@ -1196,7 +1228,8 @@ return;
 if(password=="12345"){
 
 localStorage.setItem("username",username);
-
+document.getElementById("leaderboardname").innerHTML =
+"Player: " + username;
 document.getElementById("loginpage").style.display =
 "none";
 
