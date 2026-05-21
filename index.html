@@ -881,7 +881,11 @@ document.getElementById("timer").innerHTML =
 "Time Left: " + time;
 if(time<=0){
 if(score>=5){
-alert("Excellent 🎉\nYour Score: " + score);
+alert(
+"🎉 Congratulations " +
+localStorage.getItem("username") +
+"\nFinal Score: " + score
+);
 }else if(score>=3){
 alert("Good 👍\nYour Score: " + score);
 }else{
