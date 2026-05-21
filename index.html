@@ -471,6 +471,15 @@ UPSC
   <h3 id="datetime"></h3>
   <h3 id="quote"></h3>
   <h3 id="greet"></h3>
+  <div class="card">
+<h2>👤 User Profile</h2>
+
+<h3 id="showname"></h3>
+
+<button onclick="logout()">
+Logout
+</button>
+</div>
   <h3 id="profile"></h3>
 <h2 id="score">Score: 0</h2>
   <h3 id="percent">
@@ -788,6 +797,8 @@ document.getElementById("loginpage").style.display =
 "none";
 document.getElementById("greet").innerHTML =
 "Welcome " + savedname + " 🚀";
+document.getElementById("showname").innerHTML =
+"Name: " + savedname;
 document.getElementById("profile").innerHTML =
 "👤 User: " + savedname;
 }
@@ -1175,6 +1186,8 @@ document.getElementById("loginpage").style.display =
 
 document.getElementById("greet").innerHTML =
 "Welcome " + username + " 🚀";
+document.getElementById("showname").innerHTML =
+"Name: " + username;
 document.getElementById("profile").innerHTML =
 "👤 User: " + username;
 document.getElementById("welcomesound").play();
@@ -1184,6 +1197,13 @@ document.getElementById("welcomesound").play();
 alert("Wrong Password ❌");
 
 }
+
+}
+function logout(){
+
+localStorage.removeItem("username");
+
+location.reload();
 
 }
 </script>
