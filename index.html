@@ -403,7 +403,7 @@ style="width:85%;">
 Enter App
 </button>
 </div>
-<audio autoplay loop>
+<audio autoplay loop id="bgmusic">
 <source src="music.mp3" type="audio/mp3">
 </audio>
 <audio id="correctsound"
@@ -552,6 +552,9 @@ Beginner 🚀
   <button onclick="darkmode()">
 Dark / Light Mode
   </button>
+  <button onclick="toggleMusic()">
+🎵 Music ON/OFF
+</button>
   <button onclick="restartQuiz()">
 Restart Quiz
   </button>
@@ -1364,6 +1367,18 @@ alert(
 + username +
 "\nYou completed BANTY Learning Quiz 🚀"
 );
+
+}
+function toggleMusic(){
+
+var music =
+document.getElementById("bgmusic");
+
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
 
 }
 </script>
