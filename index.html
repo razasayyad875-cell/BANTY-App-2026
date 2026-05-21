@@ -494,6 +494,9 @@ border-radius:10px;
 </div>
 </div>
   <h2 id="highscore">High Score: 0</h2>
+<h2 id="leaderboard">
+🏆 Leader: None
+</h2>
   <h3 id="visitor">
 Visitors: 0
 </h3>
@@ -872,6 +875,11 @@ document.getElementById("streak").innerHTML =
 "🔥 Daily Streak: " + streak + " Days";
 document.getElementById("highscore").innerHTML =
 "High Score: " + highscore;
+var topper =
+localStorage.getItem("username") || "None";
+
+document.getElementById("leaderboard").innerHTML =
+"🏆 Leader: " + topper;
   var time = 60;
 setInterval(function(){
 time--;
