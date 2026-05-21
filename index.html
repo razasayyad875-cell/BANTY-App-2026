@@ -473,9 +473,22 @@ UPSC
   <h3 id="greet"></h3>
   <div class="card">
 <h2>👤 User Profile</h2>
-
+<img
+src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+id="profilepic"
+style="
+width:120px;
+height:120px;
+border-radius:50%;
+border:4px solid #38bdf8;
+box-shadow:0 0 20px #38bdf8;
+margin-top:10px;
+">
 <h3 id="showname"></h3>
-
+<input
+type="file"
+accept="image/*"
+onchange="uploadpic(event)">
 <button onclick="logout()">
 Logout
 </button>
@@ -1204,6 +1217,15 @@ function logout(){
 localStorage.removeItem("username");
 
 location.reload();
+
+}
+function uploadpic(event){
+
+var image =
+document.getElementById("profilepic");
+
+image.src =
+URL.createObjectURL(event.target.files[0]);
 
 }
 </script>
