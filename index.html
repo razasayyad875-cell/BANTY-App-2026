@@ -567,9 +567,17 @@ accept="image/*"
 onchange="loadProfile(event)">
   <div class="card">
 <h2>👤 User Profile</h2>
-id="profilepic2"
+
+<img id="profilepic2"
+src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
 style="
 width:120px;
+height:120px;
+border-radius:50%;
+border:4px solid #38bdf8;
+box-shadow:0 0 20px #38bdf8;
+margin-top:10px;
+">
 height:120px;
 border-radius:50%;
 border:4px solid #38bdf8;
@@ -1923,20 +1931,25 @@ alert("Enter Username");
 return;
 }
 
-if(password.length >= 5)
+if(password.length >= 5){
 
 localStorage.setItem("username",username);
+
 document.getElementById("leaderboardname").innerHTML =
 "Player: " + username;
+
 document.getElementById("loginpage").style.display =
 "none";
 
 document.getElementById("greet").innerHTML =
 "Welcome " + username + " 🚀";
+
 document.getElementById("showname").innerHTML =
 "Name: " + username;
+
 document.getElementById("profile").innerHTML =
 "👤 User: " + username;
+
 document.getElementById("welcomesound").play();
 
 }else{
