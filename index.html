@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 <title id="title">
 BANTY Learning
 </title>
@@ -151,10 +153,27 @@ margin-bottom:20px;
   h3{
 color:#38bdf8;
 }
-marquee{
+.movingtext{
 font-size:22px;
 color:#facc15;
 margin-top:10px;
+white-space:nowrap;
+overflow:hidden;
+width:100%;
+box-sizing:border-box;
+animation:marqueemove 10s linear infinite;
+}
+
+@keyframes marqueemove{
+
+0%{
+transform:translateX(100%);
+}
+
+100%{
+transform:translateX(-100%);
+}
+
 }
 #topbtn{
 position:fixed;
@@ -417,16 +436,7 @@ width:80%;
 border-radius:10px;
 margin-top:20px;
 ">
- type="password"
-id="pass"
-placeholder="Enter Password"
-style="
-padding:15px;
-width:80%;
-border-radius:10px;
-margin-top:20px;
-">
-<button onclick="login()"
+<button onclick="playsound();login()"
 style="width:85%;">
 Enter App
 </button>
@@ -439,8 +449,11 @@ src="
 https://www.soundjay.com/buttons/sounds/button-3.mp3">
 </audio>
 <audio id="wrongsound"
-src="
-https://www.soundjay.com/buttons/sounds/button-10.mp3">
+src="https://www.soundjay.com/buttons/sounds/button-10.mp3">
+</audio>
+
+<audio id="clicksound"
+src="https://www.soundjay.com/buttons/sounds/button-16.mp3">
 </audio>
 <audio id="welcomesound"
 src="
@@ -448,7 +461,34 @@ https://www.soundjay.com/buttons/sounds/button-09.mp3">
 </audio>
 <div id="stars"></div>
 <div class="snow"></div>
-  
+<div id="welcomepopup"
+style="
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#111827;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 25px #38bdf8;
+z-index:99999;
+display:none;
+animation:fade 0.5s;
+">
+
+<h1 style="color:#38bdf8;">
+🚀 Welcome To BANTY Learning
+</h1>
+
+<p style="color:white;">
+NEET • JEE • UPSC Preparation App
+</p>
+
+<button onclick="playsound();closepopup()">
+Start Learning
+</button>
+
+</div>
 <div id="loader"
 style="
 position:fixed;
@@ -481,23 +521,30 @@ Loading<span id="dots"></span>
 NEET • JEE • UPSC
 </div>
 </div>
-<marquee behavior="scroll" direction="left">
+<div class="movingtext">
 🔥 Welcome To BANTY Learning App 🚀
-</marquee>
+</div>
 <div class="container">
   <div class="tabs">
-<button onclick="openTab('neet')">
+<button onclick="playsound();openTab('neet')">
 NEET
 </button>
-<button onclick="openTab('jee')">
+<button onclick="playsound();openTab('jee')">
 JEE
 </button>
-<button onclick="openTab('upsc')">
+<button onclick="playsound();openTab('upsc')">
 UPSC
 </button>
 </div>
   <h3 id="datetime"></h3>
   <h3 id="quote"></h3>
+<h3 id="fact"
+style="
+color:#38bdf8;
+text-shadow:0 0 10px #38bdf8;
+">
+🧠 Loading Fact...
+</h3>
   <h3 id="greet"></h3>
 <br>
 
@@ -520,9 +567,7 @@ accept="image/*"
 onchange="loadProfile(event)">
   <div class="card">
 <h2>👤 User Profile</h2>
-<img
-src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-id="profilepic"
+id="profilepic2"
 style="
 width:120px;
 height:120px;
@@ -542,8 +587,20 @@ Logout
 </div>
   <h3 id="profile"></h3>
 <h2 id="score">Score: 0</h2>
-<h2 id="rank">
-Rank: Beginner
+<h2 id="level"
+style="
+color:#22c55e;
+text-shadow:0 0 10px #22c55e;
+">
+⭐ Level: 1
+</h2>
+
+<h2 id="rank"
+style="
+color:#facc15;
+text-shadow:0 0 10px #facc15;
+">
+🏅 Rank: Beginner
 </h2>
   <h3 id="percent">
 Completion: 0%
@@ -586,6 +643,13 @@ Score: 0
 Visitors: 0
 </h3>
   <h3 id="streak">
+<h2 id="reward"
+style="
+color:#22c55e;
+text-shadow:0 0 10px #22c55e;
+">
+🎁 Daily Reward: 0 Coins
+</h2>
 🔥 Daily Streak: 0 Days
 </h3>
 <div class="card">
@@ -639,7 +703,7 @@ animation:fade 1s;
 <h2 id="questiontimer">
 Question Time: 10
 </h2>
-  <button onclick="darkmode()">
+  <button onclick="playsound();darkmode()">
 Dark / Light Mode
   </button>
   <div class="card">
@@ -662,11 +726,16 @@ Dark / Light Mode
   <button onclick="toggleMusic()">
 🎵 Music ON/OFF
 </button>
-  <button onclick="restartQuiz()">
+<button onclick="playsound();restartQuiz()">
 Restart Quiz
-  </button>
-  <button onclick="shownotice()">
-📢 Show Notification
+</button>
+
+<button onclick="togglesound()">
+🔊 Sound ON/OFF
+</button>
+
+<button onclick="playsound();restartQuiz()">
+Restart Quiz
 </button>
   <button onclick="certificate()">
 🎓 Get Certificate
@@ -687,7 +756,7 @@ border-radius:10px;
 <div class="card">
 <h2>NEET Previous Year Questions</h2>
 <p>Biology • Physics • Chemistry</p>
-<button onclick="showneet()">
+<button onclick="playsound();showneet()">
 Open NEET Questions
 </button>
 <div id="neetbox"
@@ -702,12 +771,12 @@ NEET Quiz Started 🚀
 <div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
 Q1. Human heart has how many chambers?
 <br><br>
-<button onclick="check1('A',this)">A. 2</button>
-<button onclick="check1('B',this)">B. 3</button>
-<button onclick="check1('C',this)">C. 4</button>
-<button onclick="check1('D',this)">D. 5</button>
+<button onclick="playsound();check1('A',this)">A. 2</button>
+<button onclick="playsound();check1('B',this)">B. 3</button>
+<button onclick="playsound();check1('C',this)">C. 4</button>
+<button onclick="playsound();check1('D',this)">D. 5</button>
 </div>
-<button onclick="nextQuestion()">
+<button onclick="playsound();nextQuestion()">
 Next Question
 </button>
 <div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
@@ -797,8 +866,8 @@ D. Kidney
 </button>
 
 </div>
-</div>
-  <div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
+
+<div style="background:#334155;padding:15px;border-radius:10px;margin-top:10px;">
 
 Q7. Father of Biology?
 
@@ -825,7 +894,7 @@ D. Darwin
 <div class="card">
 <h2>JEE Previous Year Questions</h2>
 <p>Math • Physics • Chemistry</p>
-<button onclick="showjee()">
+<button onclick="playsound();showjee()">
 Open JEE Questions
 </button>
 </div>
@@ -846,19 +915,19 @@ Q1. Value of π ?
 
 <br><br>
 
-<button onclick="checkjee1('A',this)">
+<button onclick="playsound();check1('A',this)">
 A. 2.14
 </button>
 
-<button onclick="checkjee1('B',this)">
+<button onclick="playsound();checkjee1('B',this)">
 B. 3.14
 </button>
 
-<button onclick="checkjee1('C',this)">
+<button onclick="playsound();check1('A',this)">
 C. 4.14
 </button>
 
-<button onclick="checkjee1('D',this)">
+<button onclick="playsound();check1('A',this)">
 D. 5.14
 </button>
 
@@ -867,19 +936,19 @@ D. 5.14
 </div>
 <br><br>
 
-<button onclick="checkjee1('A',this)">
+<button onclick="playsound();check1('A',this)">
 A. 2
 </button>
 
-<button onclick="checkjee1('B',this)">
+<button onclick="playsound();check1('A',this)">
 B. 3
 </button>
 
-<button onclick="checkjee1('C',this)">
+<button onclick="playsound();check1('A',this)">
 C. 4
 </button>
+<button onclick="playsound();check1('A',this)">
 
-<button onclick="checkjee1('D',this)">
 D. 5
 </button>
 
@@ -889,7 +958,7 @@ D. 5
 <div class="card">
 <h2>UPSC Previous Year Questions</h2>
 <p>History • Polity • Geography</p>
-<button onclick="showupsc()">
+<button onclick="playsound();showupsc()">
 Open UPSC Questions
 </button>
 </div>
@@ -910,19 +979,19 @@ Q1. India ka rashtriya pashu kaun hai?
 
 <br><br>
 
-<button onclick="checkupsc1('A',this)">
+<button onclick="playsound();check1('A',this)">
 A. Lion
 </button>
 
-<button onclick="checkupsc1('B',this)">
+<button onclick="playsound();checkupsc1('B',this)">
 B. Tiger
 </button>
 
-<button onclick="checkupsc1('C',this)">
+<button onclick="playsound();check1('A',this)">
 C. Elephant
 </button>
 
-<button onclick="checkupsc1('D',this)">
+<button onclick="playsound();check1('A',this)">
 D. Horse
 </button>
 
@@ -944,7 +1013,7 @@ width:80%;
 border-radius:10px;
 ">
 
-<button onclick="askAI()">
+<button onclick="playsound();askAI()">
 Ask AI
 </button>
 
@@ -994,6 +1063,17 @@ Close
 Made By BANTY Raza 🚀 | NEET • JEE • UPSC Learning App
 </div>
 <script>
+  function closepopup(){
+
+document.getElementById("welcomepopup").style.display =
+"none";
+
+}
+function playsound(){
+
+document.getElementById("clicksound").play();
+
+}
 function loading(){
 setTimeout(function(){
 document.getElementById("loader").style.display =
@@ -1001,6 +1081,12 @@ document.getElementById("loader").style.display =
 document.getElementById("splash").style.display =
 "none";
 },2000);
+setTimeout(function(){
+
+document.getElementById("welcomepopup").style.display =
+"block";
+
+},2500);
 }
   alert("Welcome to BANTY Learning 🚀");
   var savedname =
@@ -1066,6 +1152,23 @@ dots.innerHTML += ".";
 },500);
   var q =
 "Success Starts With Daily Practice 🚀";
+
+var facts = [
+
+"🧠 Human brain has around 86 billion neurons.",
+
+"🚀 Daily study improves memory power.",
+
+"📚 Revision is the key to success.",
+
+"⚡ NEET toppers revise NCERT many times.",
+
+"🌍 UPSC needs consistency more than intelligence.",
+
+"🔥 JEE practice increases speed and accuracy."
+
+];
+"Success Starts With Daily Practice 🚀";
 var qi = 0;
 function quoteEffect(){
 if(qi < q.length){
@@ -1076,10 +1179,23 @@ setTimeout(quoteEffect,100);
 }
 }
 quoteEffect();
+var randomfact =
+facts[Math.floor(Math.random()*facts.length)];
+
+document.getElementById("fact").innerHTML =
+randomfact;
   setTimeout(function(){
-alert(
-"📚 Daily Practice = Success 🚀"
-);
+
+document.getElementById("achievement").innerHTML =
+"📚 Daily Practice = Success 🚀";
+
+setTimeout(function(){
+
+document.getElementById("achievement").innerHTML =
+"";
+
+},3000);
+
 },5000);
   setInterval(function(){
 if(document.title=="BANTY Learning"){
@@ -1099,6 +1215,7 @@ score = parseInt(score);
 
 document.getElementById("score").innerHTML =
 "Score: " + score;
+updaterank();
 if(score>=2){
 document.getElementById("rank").innerHTML =
 "Rank: Bronze 🥉";
@@ -1122,16 +1239,26 @@ document.getElementById("visitor").innerHTML =
 "Visitors: " + visitors;
   var streak =
 localStorage.getItem("streak") || 0;
+
+var coins =
+localStorage.getItem("coins") || 0;
 var lastvisit =
 localStorage.getItem("lastvisit");
 var today =
 new Date().toDateString();
 if(lastvisit != today){
 streak++;
+coins = parseInt(coins) + 10;
+
+localStorage.setItem("coins",coins);
 localStorage.setItem("streak",streak);
 localStorage.setItem("lastvisit",today);
 }
+document.getElementById("reward").innerHTML =
+"🎁 Daily Reward: " + coins + " Coins";
+
 document.getElementById("streak").innerHTML =
+"🔥 Daily Streak: " + streak + " Days";
 "🔥 Daily Streak: " + streak + " Days";
 document.getElementById("highscore").innerHTML =
 "High Score: " + highscore;
@@ -1159,7 +1286,9 @@ qtime = 10;
 
 },1000);
 setInterval(function(){
+if(time > 0){
 time--;
+}
 document.getElementById("progress").style.width =
 time + "%";
 document.getElementById("timer").innerHTML =
@@ -1183,16 +1312,38 @@ showFinalResult();
   function darkmode(){
 document.body.classList.toggle("light");
   }
+var soundon = true;
+
+function togglesound(){
+
+var sounds = document.querySelectorAll("audio");
+
+if(soundon){
+
+sounds.forEach(function(audio){
+audio.muted = true;
+});
+
+soundon = false;
+
+alert("🔇 Sound OFF");
+
+}else{
+
+sounds.forEach(function(audio){
+audio.muted = false;
+});
+
+soundon = true;
+
+alert("🔊 Sound ON");
+
+}
+
+}
 function restartQuiz(){
 
 localStorage.removeItem("score");
-
-location.reload();
-
-}
-  function logout(){
-
-localStorage.removeItem("username");
 
 location.reload();
 
@@ -1217,6 +1368,7 @@ qtime = 10;
 localStorage.setItem("score",score);
 document.getElementById("score").innerHTML =
 "Score: " + score;
+updaterank();
 if(score>=2){
   showachievement("🏆 Expert Level Reached!");
 document.getElementById("rank").innerHTML =
@@ -1285,9 +1437,14 @@ if(ans=="A"){
 btn.style.background="green";
 navigator.vibrate(50);
 score++;
+
+localStorage.setItem("score",score);
+
 qtime = 10;
+
 document.getElementById("score").innerHTML =
 "Score: " + score;
+updaterank();
 if(score>=2){
 document.getElementById("rank").innerHTML =
 "Rank: Bronze 🥉";
@@ -1333,6 +1490,7 @@ qtime = 10;
 localStorage.setItem("score",score);
 document.getElementById("score").innerHTML =
 "Score: " + score;
+updaterank();
 if(score>=2){
 document.getElementById("rank").innerHTML =
 "Rank: Bronze 🥉";
@@ -1370,6 +1528,7 @@ qtime = 10;
 localStorage.setItem("score",score);
 document.getElementById("score").innerHTML =
 "Score: " + score;
+updaterank();
 if(score>=2){
 document.getElementById("rank").innerHTML =
 "Rank: Bronze 🥉";
@@ -1407,6 +1566,7 @@ qtime = 10;
 localStorage.setItem("score",score);
 document.getElementById("score").innerHTML =
 "Score: " + score;
+updaterank();
 if(score>=2){
 document.getElementById("rank").innerHTML =
 "Rank: Bronze 🥉";
@@ -1443,9 +1603,9 @@ if(ans=="C"){
 btn.style.background="green";
 
 score++;
+localStorage.setItem("score",score);
 qtime = 10;
-document.getElementById("score").innerHTML =
-"Score: " + score;
+updaterank();
 if(score>=2){
 document.getElementById("rank").innerHTML =
 "Rank: Bronze 🥉";
@@ -1483,9 +1643,9 @@ if(ans=="B"){
 btn.style.background="green";
 
 score++;
+localStorage.setItem("score",score);
 qtime = 10;
-document.getElementById("score").innerHTML =
-"Score: " + score;
+updaterank();
 if(score>=2){
 document.getElementById("rank").innerHTML =
 "Rank: Bronze 🥉";
@@ -1524,9 +1684,9 @@ if(ans=="B"){
 btn.style.background="green";
 
 score++;
+localStorage.setItem("score",score);
 qtime = 10;
-document.getElementById("score").innerHTML =
-"Score: " + score;
+updaterank();
 if(score>=2){
 document.getElementById("rank").innerHTML =
 "Rank: Bronze 🥉";
@@ -1566,9 +1726,9 @@ if(ans=="B"){
 btn.style.background="green";
 
 score++;
+localStorage.setItem("score",score);
 qtime = 10;
-document.getElementById("score").innerHTML =
-"Score: " + score;
+updaterank();
 if(score>=2){
 document.getElementById("rank").innerHTML =
 "Rank: Bronze 🥉";
@@ -1601,11 +1761,6 @@ btn.style.background="red";
 }
 
 }
-  function showachievement(text){
-
-alert(text);
-
-}
 function showachievement(text){
 
 document.getElementById("achievement").innerHTML =
@@ -1617,6 +1772,52 @@ document.getElementById("achievement").innerHTML =
 "";
 
 },3000);
+
+}
+function updaterank(){
+updatelevel();
+if(score>=1){
+document.getElementById("rank").innerHTML =
+"🥉 Rank: Bronze";
+}
+
+if(score>=3){
+document.getElementById("rank").innerHTML =
+"🥈 Rank: Silver";
+}
+
+if(score>=5){
+document.getElementById("rank").innerHTML =
+"🥇 Rank: Gold";
+}
+
+if(score>=7){
+document.getElementById("rank").innerHTML =
+"🏆 Rank: Expert";
+}
+
+}
+function updatelevel(){
+
+if(score>=1){
+document.getElementById("level").innerHTML =
+"⭐ Level: 1";
+}
+
+if(score>=3){
+document.getElementById("level").innerHTML =
+"⭐⭐ Level: 2";
+}
+
+if(score>=5){
+document.getElementById("level").innerHTML =
+"⭐⭐⭐ Level: 3";
+}
+
+if(score>=7){
+document.getElementById("level").innerHTML =
+"🔥 Master Level";
+}
 
 }
   function nextQuestion(){
@@ -1693,9 +1894,19 @@ document.getElementById("profilepic");
 image.src =
 URL.createObjectURL(event.target.files[0]);
 
+var reader = new FileReader();
+
+reader.onload = function(e){
+
 localStorage.setItem(
 "profilepic",
-image.src
+e.target.result
+);
+
+};
+
+reader.readAsDataURL(
+event.target.files[0]
 );
 
 }
@@ -1712,7 +1923,7 @@ alert("Enter Username");
 return;
 }
 
-if(password=="12345"){
+if(password.length >= 5)
 
 localStorage.setItem("username",username);
 document.getElementById("leaderboardname").innerHTML =
@@ -1936,7 +2147,7 @@ document.getElementById("achievementpopup").style.display =
 
 }
 </script>
-<button onclick="topFunction()" id="topbtn">
+<button onclick="playsound();topFunction()" id="topbtn">
 ⬆ Top
 </button>
 </body>
