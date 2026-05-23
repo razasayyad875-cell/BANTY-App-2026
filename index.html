@@ -179,14 +179,13 @@ transform:translateX(-100%);
 position:fixed;
 bottom:20px;
 right:20px;
-width:100px;
-  background:#22c55e;
+width:60px;
+height:60px;
+background:#22c55e;
 color:white;
 border:none;
-border-radius:10px;
-box-shadow:0 0 15px #22c55e;
-font-size:18px;
-animation:bounce 1s infinite;
+border-radius:50%;
+font-size:20px;
 }
 #percent{
 animation:colorchange 2s infinite;
@@ -369,6 +368,21 @@ opacity:1;
 transform:translateY(0px);
 }
 }
+img{
+max-width:100%;
+}
+
+button{
+font-size:16px;
+}
+
+.card{
+margin:10px;
+}
+
+input{
+width:90%;
+}
 </style>
 </head>
 <body onload="loading()">
@@ -442,7 +456,7 @@ Enter App
 </button>
 </div>
 <audio autoplay loop id="bgmusic">
-<source src="music.mp3" type="audio/mp3">
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
 </audio>
 <audio id="correctsound"
 src="
@@ -578,12 +592,6 @@ border:4px solid #38bdf8;
 box-shadow:0 0 20px #38bdf8;
 margin-top:10px;
 ">
-height:120px;
-border-radius:50%;
-border:4px solid #38bdf8;
-box-shadow:0 0 20px #38bdf8;
-margin-top:10px;
-">
 <h3 id="showname"></h3>
 <input
 type="file"
@@ -650,8 +658,17 @@ Score: 0
   <h3 id="visitor">
 Visitors: 0
 </h3>
-  <h3 id="streak">
+<h3 id="streak">
+🔥 Daily Streak: 0 Days
+</h3>
+
 <h2 id="reward"
+style="
+color:#22c55e;
+text-shadow:0 0 10px #22c55e;
+">
+🎁 Daily Reward: 0 Coins
+</h2>
 style="
 color:#22c55e;
 text-shadow:0 0 10px #22c55e;
@@ -742,9 +759,6 @@ Restart Quiz
 🔊 Sound ON/OFF
 </button>
 
-<button onclick="playsound();restartQuiz()">
-Restart Quiz
-</button>
   <button onclick="certificate()">
 🎓 Get Certificate
 </button>
@@ -942,27 +956,7 @@ D. 5.14
 </div>
 
 </div>
-<br><br>
 
-<button onclick="playsound();check1('A',this)">
-A. 2
-</button>
-
-<button onclick="playsound();check1('A',this)">
-B. 3
-</button>
-
-<button onclick="playsound();check1('A',this)">
-C. 4
-</button>
-<button onclick="playsound();check1('A',this)">
-
-D. 5
-</button>
-
-</div>
-
-</div>
 <div class="card">
 <h2>UPSC Previous Year Questions</h2>
 <p>History • Polity • Geography</p>
@@ -1079,7 +1073,11 @@ document.getElementById("welcomepopup").style.display =
 }
 function playsound(){
 
-document.getElementById("clicksound").play();
+var sound =
+document.getElementById("clicksound");
+
+sound.currentTime = 0;
+sound.play();
 
 }
 function loading(){
@@ -1096,13 +1094,15 @@ document.getElementById("welcomepopup").style.display =
 
 },2500);
 }
-  alert("Welcome to BANTY Learning 🚀");
   var savedname =
 localStorage.getItem("username");
 var savedpic =
 localStorage.getItem("profilepic");
 
 if(savedpic){
+  document.getElementById("profilepic2").src =
+savedpic;
+
 document.getElementById("profilepic").src =
 savedpic;
 }
@@ -1373,6 +1373,11 @@ navigator.vibrate(50);
   document.getElementById("correctsound").play();
 score++;
 qtime = 10;
+document.getElementById("questiontimer").innerHTML =
+"Question Time: " + qtime;
+document.getElementById("questiontimer").innerHTML =
+"Question Time: " + qtime;
+
 localStorage.setItem("score",score);
 document.getElementById("score").innerHTML =
 "Score: " + score;
@@ -1404,11 +1409,11 @@ document.getElementById("badge").innerHTML =
 document.getElementById("leaderboardscore").innerHTML =
 "Score: " + score;
   document.getElementById("percent").innerHTML =
-"Completion: " + (score*20) + "%";
+"Completion: " + Math.min(score*20,100) + "%";
   document.getElementById("progressbar").style.width =
-(score*20) + "%";
+Math.min(score*20,100) + "%";
   document.getElementById("circle").innerHTML =
-(score*20) + "%";
+Math.min(score*20,100)+ "%";
   if(score>=1){
     showachievement("🥉 Bronze Rank Unlocked!");
 document.getElementById("circle").style.borderColor =
@@ -1449,7 +1454,8 @@ score++;
 localStorage.setItem("score",score);
 
 qtime = 10;
-
+document.getElementById("questiontimer").innerHTML =
+"Question Time: " + qtime;
 document.getElementById("score").innerHTML =
 "Score: " + score;
 updaterank();
@@ -1524,8 +1530,10 @@ document.getElementById("badge").innerHTML =
 }
 document.getElementById("leaderboardscore").innerHTML =
 "Score: " + score;
-}else{
+else{
 btn.style.background="red";
+document.getElementById("wrongsound").play();
+navigator.vibrate(100);
 }
   }
     function check4(ans,btn){
@@ -1533,6 +1541,8 @@ if(ans=="A"){
 btn.style.background="green";
 score++;
 qtime = 10;
+document.getElementById("questiontimer").innerHTML =
+"Question Time: " + qtime;
 localStorage.setItem("score",score);
 document.getElementById("score").innerHTML =
 "Score: " + score;
@@ -1562,8 +1572,10 @@ document.getElementById("badge").innerHTML =
 }
 document.getElementById("leaderboardscore").innerHTML =
 "Score: " + score;
-}else{
+else{
 btn.style.background="red";
+document.getElementById("wrongsound").play();
+navigator.vibrate(100);
 }
 }
 function check5(ans,btn){
@@ -1571,6 +1583,8 @@ if(ans=="B"){
 btn.style.background="green";
 score++;
 qtime = 10;
+document.getElementById("questiontimer").innerHTML =
+"Question Time: " + qtime;
 localStorage.setItem("score",score);
 document.getElementById("score").innerHTML =
 "Score: " + score;
@@ -1611,8 +1625,12 @@ if(ans=="C"){
 btn.style.background="green";
 
 score++;
+document.getElementById("score").innerHTML =
+"Score: " + score;
 localStorage.setItem("score",score);
 qtime = 10;
+document.getElementById("questiontimer").innerHTML =
+"Question Time: " + qtime;
 updaterank();
 if(score>=2){
 document.getElementById("rank").innerHTML =
@@ -1639,9 +1657,10 @@ document.getElementById("badge").innerHTML =
 }
 document.getElementById("leaderboardscore").innerHTML =
 "Score: " + score;
-}else{
-
+else{
 btn.style.background="red";
+document.getElementById("wrongsound").play();
+navigator.vibrate(100);
 }
 }
     function checkjee1(ans,btn){
@@ -1651,8 +1670,12 @@ if(ans=="B"){
 btn.style.background="green";
 
 score++;
+document.getElementById("score").innerHTML =
+"Score: " + score;
 localStorage.setItem("score",score);
 qtime = 10;
+document.getElementById("questiontimer").innerHTML =
+"Question Time: " + qtime;
 updaterank();
 if(score>=2){
 document.getElementById("rank").innerHTML =
@@ -1679,9 +1702,10 @@ document.getElementById("badge").innerHTML =
 }
 document.getElementById("leaderboardscore").innerHTML =
 "Score: " + score;
-}else{
-
+else{
 btn.style.background="red";
+document.getElementById("wrongsound").play();
+navigator.vibrate(100);
 }
 
 }
@@ -1692,8 +1716,12 @@ if(ans=="B"){
 btn.style.background="green";
 
 score++;
+document.getElementById("score").innerHTML =
+"Score: " + score;
 localStorage.setItem("score",score);
 qtime = 10;
+document.getElementById("questiontimer").innerHTML =
+"Question Time: " + qtime;
 updaterank();
 if(score>=2){
 document.getElementById("rank").innerHTML =
@@ -1720,10 +1748,10 @@ document.getElementById("badge").innerHTML =
 }
 document.getElementById("leaderboardscore").innerHTML =
 "Score: " + score;
-}else{
-
+else{
 btn.style.background="red";
-
+document.getElementById("wrongsound").play();
+navigator.vibrate(100);
 }
 
 }
@@ -1734,8 +1762,12 @@ if(ans=="B"){
 btn.style.background="green";
 
 score++;
+document.getElementById("score").innerHTML =
+"Score: " + score;
 localStorage.setItem("score",score);
 qtime = 10;
+document.getElementById("questiontimer").innerHTML =
+"Question Time: " + qtime;
 updaterank();
 if(score>=2){
 document.getElementById("rank").innerHTML =
@@ -1762,24 +1794,11 @@ document.getElementById("badge").innerHTML =
 }
 document.getElementById("leaderboardscore").innerHTML =
 "Score: " + score;
-}else{
-
+else{
 btn.style.background="red";
-
+document.getElementById("wrongsound").play();
+navigator.vibrate(100);
 }
-
-}
-function showachievement(text){
-
-document.getElementById("achievement").innerHTML =
-text;
-
-setTimeout(function(){
-
-document.getElementById("achievement").innerHTML =
-"";
-
-},3000);
 
 }
 function updaterank(){
@@ -1931,7 +1950,7 @@ alert("Enter Username");
 return;
 }
 
-if(password.length >= 5){
+if(password=="720958")
 
 localStorage.setItem("username",username);
 
@@ -1968,11 +1987,31 @@ location.reload();
 }
 function uploadpic(event){
 
-var image =
+var image1 =
 document.getElementById("profilepic");
 
-image.src =
+var image2 =
+document.getElementById("profilepic2");
+
+var imgurl =
 URL.createObjectURL(event.target.files[0]);
+
+image1.src = imgurl;
+image2.src = imgurl;
+var reader = new FileReader();
+
+reader.onload = function(e){
+
+localStorage.setItem(
+"profilepic",
+e.target.result
+);
+
+};
+
+reader.readAsDataURL(
+event.target.files[0]
+);
 
 }
 function certificate(){
