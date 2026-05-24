@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
 
 <meta charset="UTF-8">
@@ -8,71 +7,571 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>BANTY Learning</title>
+<title>
+BANTY Learning
+</title>
+
+<link rel="shortcut icon"
+type="image/png"
+href="https://github.githubassets.com/favicons/favicon.png">
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:Arial;
-background:#0f172a;
-color:white;
-text-align:center;
+padding:0;
+box-sizing:border-box;
 }
+
+body{
+
+font-family:Arial;
+
+background:linear-gradient(
+-45deg,
+#0f172a,
+#111827,
+#1e293b,
+#0f172a
+);
+
+background-size:400% 400%;
+
+animation:bgmove 10s ease infinite;
+
+color:white;
+
+text-align:center;
+
+overflow-x:hidden;
+
+}
+
+/* ===== BACKGROUND ===== */
+
+#stars{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background-image:
+radial-gradient(white 1px, transparent 1px);
+
+background-size:40px 40px;
+
+opacity:0.2;
+
+z-index:-2;
+
+}
+
+.snow{
+
+position:fixed;
+
+top:-10px;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+background-image:
+radial-gradient(white 2px, transparent 2px);
+
+background-size:50px 50px;
+
+animation:snowfall 10s linear infinite;
+
+opacity:0.3;
+
+z-index:-1;
+
+}
+
+/* ===== HEADER ===== */
 
 .header{
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+
 padding:20px;
+
 font-size:30px;
+
 font-weight:bold;
-background:#111827;
+
+background:rgba(17,24,39,0.7);
+
+backdrop-filter:blur(10px);
+
 color:#38bdf8;
-box-shadow:0 0 10px #38bdf8;
+
+text-shadow:0 0 10px #38bdf8;
+
+animation:glow 2s infinite alternate;
+
 }
+
+.tag{
+
+font-size:18px;
+
+margin-top:5px;
+
+color:#cbd5e1;
+
+}
+
+/* ===== CONTAINER ===== */
 
 .container{
+
 padding:20px;
+
 }
+
+/* ===== CARD ===== */
 
 .card{
-background:#1e293b;
+
+background:rgba(30,41,59,0.7);
+
 padding:20px;
-margin-top:20px;
-border-radius:15px;
-box-shadow:0 0 10px rgba(0,0,0,0.5);
+
+margin:20px;
+
+border-radius:20px;
+
+border:2px solid #38bdf8;
+
+backdrop-filter:blur(10px);
+
+box-shadow:0 0 15px rgba(0,0,0,0.5);
+
+transition:0.3s;
+
+animation:float 3s ease-in-out infinite;
+
 }
 
+.card:hover{
+
+transform:scale(1.02);
+
+}
+
+/* ===== BUTTON ===== */
+
 button{
+
 width:100%;
+
 padding:15px;
+
 margin-top:10px;
+
 border:none;
-border-radius:10px;
+
+border-radius:12px;
+
 font-size:18px;
-background:#38bdf8;
-color:white;
+
 font-weight:bold;
+
+color:white;
+
 cursor:pointer;
+
+background:linear-gradient(
+45deg,
+#38bdf8,
+#22c55e,
+#facc15,
+#ef4444
+);
+
+background-size:300% 300%;
+
+animation:gradientmove 5s infinite;
+
+box-shadow:0 0 10px #38bdf8;
+
 }
 
 button:hover{
-background:#0284c7;
+
+opacity:0.9;
+
 }
 
-h2{
-color:#22c55e;
+button:active{
+
+transform:scale(0.95);
+
 }
 
-#result{
-font-size:22px;
-margin-top:20px;
-color:#facc15;
+/* ===== INPUT ===== */
+
+input{
+
+width:90%;
+
+padding:15px;
+
+margin-top:10px;
+
+border:none;
+
+outline:none;
+
+border-radius:12px;
+
+background:#1e293b;
+
+color:white;
+
+border:2px solid #38bdf8;
+
+box-shadow:0 0 10px #38bdf8;
+
 }
+
+/* ===== FOOTER ===== */
 
 .footer{
-margin-top:30px;
+
 padding:20px;
+
+margin-top:30px;
+
 background:#111827;
+
 color:#94a3b8;
+
+font-size:18px;
+
+}
+
+/* ===== LOGIN PAGE ===== */
+
+#loginpage{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#0f172a;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+z-index:10000;
+
+}
+
+/* ===== SPLASH ===== */
+
+#splash{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#020617;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+z-index:20000;
+
+}
+
+/* ===== LOADER ===== */
+
+#loader{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#0f172a;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+font-size:30px;
+
+z-index:9999;
+
+}
+
+/* ===== MOVING TEXT ===== */
+
+.movingtext{
+
+font-size:22px;
+
+color:#facc15;
+
+margin-top:10px;
+
+white-space:nowrap;
+
+overflow:hidden;
+
+width:100%;
+
+animation:marqueemove 10s linear infinite;
+
+}
+
+/* ===== TOP BUTTON ===== */
+
+#topbtn{
+
+position:fixed;
+
+bottom:20px;
+
+right:20px;
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+background:#22c55e;
+
+font-size:20px;
+
+z-index:999;
+
+}
+
+/* ===== PROFILE PIC ===== */
+
+#profilepic,
+#profilepic2{
+
+width:120px;
+
+height:120px;
+
+border-radius:50%;
+
+border:4px solid #38bdf8;
+
+box-shadow:0 0 15px #38bdf8;
+
+object-fit:cover;
+
+}
+
+/* ===== PROGRESS ===== */
+
+#circle{
+
+width:120px;
+
+height:120px;
+
+border-radius:50%;
+
+border:8px solid #22c55e;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+margin:20px auto;
+
+font-size:28px;
+
+box-shadow:0 0 15px #22c55e;
+
+animation:pulse 1.5s infinite;
+
+}
+
+/* ===== LIGHT MODE ===== */
+
+.light{
+
+background:white;
+
+color:black;
+
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes bgmove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+@keyframes glow{
+
+from{
+text-shadow:0 0 10px #38bdf8;
+}
+
+to{
+text-shadow:0 0 25px #38bdf8;
+}
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+@keyframes gradientmove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+@keyframes snowfall{
+
+from{
+transform:translateY(-100px);
+}
+
+to{
+transform:translateY(100vh);
+}
+
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+@keyframes marqueemove{
+
+0%{
+transform:translateX(100%);
+}
+
+100%{
+transform:translateX(-100%);
+}
+
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:600px){
+
+.card{
+
+margin:10px;
+
+}
+
+button{
+
+font-size:16px;
+
+}
+
 }
 
 </style>
@@ -81,114 +580,748 @@ color:#94a3b8;
 
 <body>
 
-<div class="header">
+<div id="stars"></div>
+
+<div class="snow"></div>
+
+<!-- SPLASH -->
+
+<div id="splash">
+
+<h1 style="
+font-size:45px;
+color:#38bdf8;
+animation:pulse 1s infinite;
+">
+
 🚀 BANTY Learning
-</div>
 
-<div class="container">
-
-<h2 id="score">
-Score: 0
-</h2>
-
-<div class="card">
-
-<h1>
-NEET Quiz
 </h1>
 
-<h3>
-Q1. Human heart has how many chambers?
-</h3>
+<h2 style="color:white;">
 
-<button onclick="checkAnswer('A',this)">
-A. 2
-</button>
+Loading App...
 
-<button onclick="checkAnswer('B',this)">
-B. 3
-</button>
-
-<button onclick="checkAnswer('C',this)">
-C. 4
-</button>
-
-<button onclick="checkAnswer('D',this)">
-D. 5
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>
-Q2. DNA ka full form kya hai?
-</h3>
-
-<button onclick="checkAnswer2('A',this)">
-A. Deoxyribo Nucleic Acid
-</button>
-
-<button onclick="checkAnswer2('B',this)">
-B. Dynamic Nuclear Acid
-</button>
-
-<button onclick="checkAnswer2('C',this)">
-C. Double Nitrogen Atom
-</button>
-
-<button onclick="checkAnswer2('D',this)">
-D. None
-</button>
-
-</div>
-
-<div class="card">
-
-<h3>
-Q3. Largest organ in human body?
-</h3>
-
-<button onclick="checkAnswer3('A',this)">
-A. Heart
-</button>
-
-<button onclick="checkAnswer3('B',this)">
-B. Liver
-</button>
-
-<button onclick="checkAnswer3('C',this)">
-C. Skin
-</button>
-
-<button onclick="checkAnswer3('D',this)">
-D. Kidney
-</button>
-
-</div>
-
-<h2 id="result">
-Answer Result
 </h2>
 
 </div>
 
-<div class="footer">
-Made By BANTY Raza 🚀
+<!-- LOGIN -->
+
+<div id="loginpage">
+
+<h1 style="color:#38bdf8;">
+
+BANTY Learning Login
+
+</h1>
+
+<input type="text"
+id="name"
+placeholder="Enter Your Name">
+
+<input type="password"
+id="pass"
+placeholder="Enter Password">
+
+<button onclick="login()">
+
+Enter App
+
+</button>
+
 </div>
 
-<script>
+<!-- HEADER -->
 
-var score = 0;
+<div class="header">
 
-function updateScore(){
+<span id="typing"></span>
+
+<div class="tag">
+
+NEET • JEE • UPSC
+
+</div>
+
+</div>
+
+<div class="movingtext">
+
+🔥 Welcome To BANTY Learning App 🚀
+
+</div>
+
+<!-- MAIN CONTAINER -->
+
+<div class="container">
+  <!-- PROFILE CARD -->
+
+<div class="card">
+
+<h2>👤 User Profile</h2>
+
+<img id="profilepic"
+src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+
+<br><br>
+
+<input type="file"
+id="uploadpic"
+accept="image/*"
+onchange="loadProfile(event)">
+
+<h3 id="showname">
+Name: Guest
+</h3>
+
+<h3 id="greet">
+Welcome 🚀
+</h3>
+
+</div>
+
+<!-- SCORE CARD -->
+
+<div class="card">
+
+<h2 id="score">
+
+Score: 0
+
+</h2>
+
+<h2 id="level"
+style="
+color:#22c55e;
+text-shadow:0 0 10px #22c55e;
+">
+
+⭐ Level: 1
+
+</h2>
+
+<h2 id="rank"
+style="
+color:#facc15;
+text-shadow:0 0 10px #facc15;
+">
+
+🏅 Rank: Beginner
+
+</h2>
+
+<h3 id="percent">
+
+Completion: 0%
+
+</h3>
+
+<div id="circle">
+
+0%
+
+</div>
+
+<div style="
+width:100%;
+background:#334155;
+border-radius:10px;
+">
+
+<div id="progressbar"
+style="
+width:0%;
+padding:10px;
+background:#22c55e;
+border-radius:10px;
+">
+
+</div>
+
+</div>
+
+</div>
+
+<!-- TIMER CARD -->
+
+<div class="card">
+
+<h2 id="timer">
+
+⏰ Time Left: 60
+
+</h2>
+
+<h2 id="questiontimer">
+
+❓ Question Time: 10
+
+</h2>
+
+</div>
+
+<!-- LEADERBOARD -->
+
+<div class="card">
+
+<h2>🏆 Leaderboard</h2>
+
+<h3 id="leaderboardname">
+
+Player: Unknown
+
+</h3>
+
+<h3 id="leaderboardscore">
+
+Score: 0
+
+</h3>
+
+</div>
+
+<!-- DAILY REWARD -->
+
+<div class="card">
+
+<h2>🎁 Daily Reward</h2>
+
+<h3 id="rewardtext">
+
+No Reward Yet
+
+</h3>
+
+<button onclick="claimReward()">
+
+Claim Reward
+
+</button>
+
+</div>
+
+<!-- COINS -->
+
+<div class="card">
+
+<h2>🪙 Coin Shop</h2>
+
+<h3 id="coinbalance">
+
+Coins: 0
+
+</h3>
+
+<button onclick="buytheme()">
+
+Buy Premium Theme (50 Coins)
+
+</button>
+
+</div>
+
+<!-- ACHIEVEMENT -->
+
+<div class="card">
+
+<h2>🏅 Achievement Badge</h2>
+
+<h3 id="badge">
+
+Beginner 🚀
+
+</h3>
+
+</div>
+
+<!-- THEME -->
+
+<div class="card">
+
+<h2>🎨 Theme Colors</h2>
+
+<button onclick="redtheme()">
+
+🔴 Red Theme
+
+</button>
+
+<button onclick="bluetheme()">
+
+🔵 Blue Theme
+
+</button>
+
+<button onclick="greentheme()">
+
+🟢 Green Theme
+
+</button>
+
+<button onclick="darkmode()">
+
+🌙 Dark / Light Mode
+
+</button>
+
+</div>
+
+<!-- MUSIC -->
+
+<div class="card">
+
+<h2>🎵 Music Control</h2>
+
+<button onclick="toggleMusic()">
+
+Music ON/OFF
+
+</button>
+
+<button onclick="togglesound()">
+
+🔊 Sound ON/OFF
+
+</button>
+
+</div>
+
+<!-- ACTIONS -->
+
+<div class="card">
+
+<h2>⚡ Actions</h2>
+
+<button onclick="restartQuiz()">
+
+Restart Quiz
+
+</button>
+
+<button onclick="certificate()">
+
+🎓 Get Certificate
+
+</button>
+
+<button onclick="logout()">
+
+🚪 Logout
+
+</button>
+
+</div>
+
+<!-- AI CHATBOT -->
+
+<div class="card">
+
+<h2>🤖 AI Chatbot</h2>
+
+<input
+type="text"
+id="userquestion"
+placeholder="Ask Something...">
+
+<button onclick="askAI()">
+
+Ask AI
+
+</button>
+
+<h3 id="aianswer"></h3>
+
+</div>
+
+<!-- TABS -->
+
+<div class="card">
+
+<h2>📚 Select Exam</h2>
+
+<button onclick="openTab('neet')">
+
+NEET
+
+</button>
+
+<button onclick="openTab('jee')">
+
+JEE
+
+</button>
+
+<button onclick="openTab('upsc')">
+
+UPSC
+
+</button>
+
+</div>
+function check3(ans,btn){
+
+if(btn.disabled){
+return;
+}
+
+var buttons =
+btn.parentElement.querySelectorAll("button");
+
+buttons.forEach(function(b){
+b.disabled = true;
+});
+
+if(ans=="D"){
+
+btn.style.background="green";
+
+document.getElementById("correctsound").play();
+
+score++;
+
+qtime = 10;
+
+localStorage.setItem("score",score);
 
 document.getElementById("score").innerHTML =
 "Score: " + score;
 
+updaterank();
+
+}else{
+
+btn.style.background="red";
+
+document.getElementById("wrongsound").play();
+
 }
 
-function disableButtons(btn){
+updateProgress();
+
+}
+
+function check4(ans,btn){
+
+if(btn.disabled){
+return;
+}
+
+var buttons =
+btn.parentElement.querySelectorAll("button");
+
+buttons.forEach(function(b){
+b.disabled = true;
+});
+
+if(ans=="A"){
+
+btn.style.background="green";
+
+document.getElementById("correctsound").play();
+
+score++;
+
+qtime = 10;
+
+localStorage.setItem("score",score);
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+updaterank();
+
+}else{
+
+btn.style.background="red";
+
+document.getElementById("wrongsound").play();
+
+}
+
+updateProgress();
+
+}
+
+function check5(ans,btn){
+
+if(btn.disabled){
+return;
+}
+
+var buttons =
+btn.parentElement.querySelectorAll("button");
+
+buttons.forEach(function(b){
+b.disabled = true;
+});
+
+if(ans=="B"){
+
+btn.style.background="green";
+
+document.getElementById("correctsound").play();
+
+score++;
+
+qtime = 10;
+
+localStorage.setItem("score",score);
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+updaterank();
+
+}else{
+
+btn.style.background="red";
+
+document.getElementById("wrongsound").play();
+
+}
+
+updateProgress();
+
+}
+
+function check6(ans,btn){
+
+if(btn.disabled){
+return;
+}
+
+var buttons =
+btn.parentElement.querySelectorAll("button");
+
+buttons.forEach(function(b){
+b.disabled = true;
+});
+
+if(ans=="C"){
+
+btn.style.background="green";
+
+document.getElementById("correctsound").play();
+
+score++;
+
+qtime = 10;
+
+localStorage.setItem("score",score);
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+updaterank();
+
+}else{
+
+btn.style.background="red";
+
+document.getElementById("wrongsound").play();
+
+}
+
+updateProgress();
+
+}
+
+function check7(ans,btn){
+
+if(btn.disabled){
+return;
+}
+
+var buttons =
+btn.parentElement.querySelectorAll("button");
+
+buttons.forEach(function(b){
+b.disabled = true;
+});
+
+if(ans=="B"){
+
+btn.style.background="green";
+
+document.getElementById("correctsound").play();
+
+score++;
+
+qtime = 10;
+
+localStorage.setItem("score",score);
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+updaterank();
+
+}else{
+
+btn.style.background="red";
+
+document.getElementById("wrongsound").play();
+
+}
+
+updateProgress();
+
+}
+
+function checkjee1(ans,btn){
+
+if(btn.disabled){
+return;
+}
+
+var buttons =
+btn.parentElement.querySelectorAll("button");
+
+buttons.forEach(function(b){
+b.disabled = true;
+});
+
+if(ans=="B"){
+
+btn.style.background="green";
+
+document.getElementById("correctsound").play();
+
+score++;
+
+localStorage.setItem("score",score);
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+updaterank();
+
+}else{
+
+btn.style.background="red";
+
+document.getElementById("wrongsound").play();
+
+}
+
+updateProgress();
+
+}
+
+function checkupsc1(ans,btn){
+
+if(btn.disabled){
+return;
+}
+
+var buttons =
+btn.parentElement.querySelectorAll("button");
+
+buttons.forEach(function(b){
+b.disabled = true;
+});
+
+if(ans=="B"){
+
+btn.style.background="green";
+
+document.getElementById("correctsound").play();
+
+score++;
+
+localStorage.setItem("score",score);
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+updaterank();
+
+}else{
+
+btn.style.background="red";
+
+document.getElementById("wrongsound").play();
+
+}
+
+updateProgress();
+
+}
+
+function updateProgress(){
+
+var percent =
+Math.min(score*10,100);
+
+document.getElementById("percent").innerHTML =
+"Completion: " + percent + "%";
+
+document.getElementById("circle").innerHTML =
+percent + "%";
+
+document.getElementById("progressbar").style.width =
+percent + "%";
+
+}
+
+function updaterank(){
+
+if(score>=1){
+document.getElementById("rank").innerHTML =
+"🥉 Rank: Bronze";
+}
+
+if(score>=3){
+document.getElementById("rank").innerHTML =
+"🥈 Rank: Silver";
+}
+
+if(score>=5){
+document.getElementById("rank").innerHTML =
+"🥇 Rank: Gold";
+}
+
+if(score>=7){
+document.getElementById("rank").innerHTML =
+"🏆 Rank: Expert";
+}
+
+}
+function saveScore(){
+
+localStorage.setItem("score",score);
+
+if(score > highscore){
+
+highscore = score;
+
+localStorage.setItem("highscore",highscore);
+
+document.getElementById("highscore").innerHTML =
+"High Score: " + highscore;
+
+}
+
+}
+
+function updateProgress(){
+
+var percent =
+Math.min(score * 10,100);
+
+document.getElementById("percent").innerHTML =
+"Completion: " + percent + "%";
+
+document.getElementById("progressbar").style.width =
+percent + "%";
+
+document.getElementById("circle").innerHTML =
+percent + "%";
+
+}
+
+function disableQuestion(btn){
 
 var buttons =
 btn.parentElement.querySelectorAll("button");
@@ -197,92 +1330,686 @@ buttons.forEach(function(b){
 
 b.disabled = true;
 
-b.style.opacity = "0.5";
+b.style.opacity = "0.7";
 
 });
 
 }
 
-function checkAnswer(ans,btn){
+function correctAnswer(btn){
 
-disableButtons(btn);
-
-if(ans=="C"){
+disableQuestion(btn);
 
 btn.style.background = "green";
 
+document.getElementById("result").innerHTML =
+"Correct Answer ✅";
+
+navigator.vibrate(50);
+
+document.getElementById("correctsound").play();
+
 score++;
 
-updateScore();
+saveScore();
 
-document.getElementById("result").innerHTML =
-"✅ Correct Answer";
+document.getElementById("score").innerHTML =
+"Score: " + score;
 
-}else{
+document.getElementById("leaderboardscore").innerHTML =
+"Score: " + score;
+
+updateProgress();
+
+updaterank();
+
+qtime = 10;
+
+document.getElementById("questiontimer").innerHTML =
+"Question Time: " + qtime;
+
+if(score>=3){
+
+document.getElementById("badge").innerHTML =
+"Intermediate 🔥";
+
+}
+
+if(score>=5){
+
+document.getElementById("badge").innerHTML =
+"Expert 🏆";
+
+}
+
+}
+
+function wrongAnswer(btn){
+
+disableQuestion(btn);
 
 btn.style.background = "red";
 
 document.getElementById("result").innerHTML =
-"❌ Wrong Answer";
+"Wrong Answer ❌";
+
+navigator.vibrate(100);
+
+document.getElementById("wrongsound").play();
+
+}
+
+function check1(ans,btn){
+
+if(ans=="C"){
+
+correctAnswer(btn);
+
+}else{
+
+wrongAnswer(btn);
 
 }
 
 }
 
-function checkAnswer2(ans,btn){
-
-disableButtons(btn);
+function check2(ans,btn){
 
 if(ans=="A"){
 
-btn.style.background = "green";
-
-score++;
-
-updateScore();
-
-document.getElementById("result").innerHTML =
-"✅ Correct Answer";
+correctAnswer(btn);
 
 }else{
 
-btn.style.background = "red";
-
-document.getElementById("result").innerHTML =
-"❌ Wrong Answer";
+wrongAnswer(btn);
 
 }
 
 }
 
-function checkAnswer3(ans,btn){
+function check3(ans,btn){
 
-disableButtons(btn);
+if(ans=="D"){
+
+correctAnswer(btn);
+
+}else{
+
+wrongAnswer(btn);
+
+}
+
+}
+
+function check4(ans,btn){
+
+if(ans=="A"){
+
+correctAnswer(btn);
+
+}else{
+
+wrongAnswer(btn);
+
+}
+
+}
+
+function check5(ans,btn){
+
+if(ans=="B"){
+
+correctAnswer(btn);
+
+}else{
+
+wrongAnswer(btn);
+
+}
+
+}
+
+function check6(ans,btn){
 
 if(ans=="C"){
 
-btn.style.background = "green";
-
-score++;
-
-updateScore();
-
-document.getElementById("result").innerHTML =
-"✅ Correct Answer";
+correctAnswer(btn);
 
 }else{
 
-btn.style.background = "red";
+wrongAnswer(btn);
+
+}
+
+}
+
+function check7(ans,btn){
+
+if(ans=="B"){
+
+correctAnswer(btn);
+
+}else{
+
+wrongAnswer(btn);
+
+}
+
+}
+
+function checkjee1(ans,btn){
+
+if(ans=="B"){
+
+correctAnswer(btn);
+
+}else{
+
+wrongAnswer(btn);
+
+}
+
+}
+
+function checkupsc1(ans,btn){
+
+if(ans=="B"){
+
+correctAnswer(btn);
+
+}else{
+
+wrongAnswer(btn);
+
+}
+
+}
+
+function resetButtons(){
+
+var allbuttons =
+document.querySelectorAll("button");
+
+allbuttons.forEach(function(btn){
+
+btn.disabled = false;
+
+btn.style.opacity = "1";
+
+});
+
+}
+
+function restartQuiz(){
+
+score = 0;
+
+localStorage.setItem("score",0);
+
+document.getElementById("score").innerHTML =
+"Score: 0";
 
 document.getElementById("result").innerHTML =
-"❌ Wrong Answer";
+"";
+
+document.getElementById("badge").innerHTML =
+"Beginner 🚀";
+
+document.getElementById("rank").innerHTML =
+"🏅 Rank: Beginner";
+
+document.getElementById("level").innerHTML =
+"⭐ Level: 1";
+
+updateProgress();
+
+resetButtons();
+
+qtime = 10;
+
+time = 60;
+
+document.getElementById("timer").innerHTML =
+"Time Left: 60";
+
+document.getElementById("questiontimer").innerHTML =
+"Question Time: 10";
+
+alert("Quiz Restarted 🚀");
+
+}
+
+function topFunction(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+function shownotice(){
+
+alert(
+"🚀 New Questions Added Successfully!\n\nKeep Practicing Daily 🔥"
+);
+
+}
+function claimReward(){
+
+var coins =
+localStorage.getItem("coins") || 0;
+
+coins = parseInt(coins) + 10;
+
+localStorage.setItem("coins",coins);
+
+document.getElementById("coinbalance").innerHTML =
+"Coins: " + coins;
+
+document.getElementById("rewardtext").innerHTML =
+"🎉 Coins Earned: +10";
+
+alert(
+"🎁 Daily Reward Claimed!\n\n+10 Coins Added 🚀"
+);
+
+}
+
+function buytheme(){
+
+var coins =
+localStorage.getItem("coins") || 0;
+
+coins = parseInt(coins);
+
+if(coins >= 50){
+
+coins = coins - 50;
+
+localStorage.setItem("coins",coins);
+
+document.getElementById("coinbalance").innerHTML =
+"Coins: " + coins;
+
+document.body.style.background =
+"linear-gradient(45deg,#581c87,#7e22ce,#c084fc)";
+
+alert(
+"🎉 Premium Theme Unlocked!"
+);
+
+}else{
+
+alert(
+"❌ Not Enough Coins"
+);
 
 }
 
 }
+
+function askAI(){
+
+var q =
+document.getElementById("userquestion").value.toLowerCase();
+
+if(q==""){
+
+alert("Type Something");
+
+return;
+
+}
+
+if(q.includes("neet")){
+
+document.getElementById("aianswer").innerHTML =
+"NEET is a medical entrance exam 🩺";
+
+}
+
+else if(q.includes("jee")){
+
+document.getElementById("aianswer").innerHTML =
+"JEE is an engineering entrance exam ⚡";
+
+}
+
+else if(q.includes("upsc")){
+
+document.getElementById("aianswer").innerHTML =
+"UPSC is India's civil services exam 🇮🇳";
+
+}
+
+else if(q.includes("hello")){
+
+document.getElementById("aianswer").innerHTML =
+"Hello " + 
+(localStorage.getItem("username") || "Student")
++ " 👋";
+
+}
+
+else{
+
+document.getElementById("aianswer").innerHTML =
+"🤖 AI is learning your question...";
+
+}
+
+}
+
+function certificate(){
+
+var username =
+localStorage.getItem("username") || "Student";
+
+alert(
+"🏆 Certificate Generated!\n\nCongratulations " +
+username +
+"\nYou completed BANTY Learning Quiz 🚀"
+);
+
+}
+
+function toggleMusic(){
+
+var music =
+document.getElementById("bgmusic");
+
+if(music.paused){
+
+music.play();
+
+}else{
+
+music.pause();
+
+}
+
+}
+
+function redtheme(){
+
+document.body.style.background =
+"linear-gradient(45deg,#7f1d1d,#dc2626,#ef4444)";
+
+}
+
+function bluetheme(){
+
+document.body.style.background =
+"linear-gradient(45deg,#0f172a,#1d4ed8,#38bdf8)";
+
+}
+
+function greentheme(){
+
+document.body.style.background =
+"linear-gradient(45deg,#052e16,#16a34a,#22c55e)";
+
+}
+
+function darkmode(){
+
+document.body.classList.toggle("light");
+
+}
+
+window.onscroll = function(){
+
+var winScroll =
+document.body.scrollTop ||
+document.documentElement.scrollTop;
+
+var height =
+document.documentElement.scrollHeight -
+document.documentElement.clientHeight;
+
+var scrolled =
+(winScroll / height) * 100;
+
+document.getElementById("scrollbar").style.width =
+scrolled + "%";
+
+};
+
+window.onerror = function(msg){
+
+alert(
+"JavaScript Error:\n" + msg
+);
+
+};
+
+alert("🚀 BANTY Learning App Loaded Successfully");
+<!-- RESULT -->
+
+<div class="card">
+
+<h2 id="result">
+
+Answer Result
+
+</h2>
+
+</div>
+
+<!-- NEET QUESTIONS -->
+
+<div id="neet" class="card">
+
+<h2>🩺 NEET Questions</h2>
+
+<p>1. Human heart has how many chambers?</p>
+
+<button onclick="check1('A',this)">2</button>
+<button onclick="check1('B',this)">3</button>
+<button onclick="check1('C',this)">4</button>
+<button onclick="check1('D',this)">5</button>
+
+<br><br>
+
+<p>2. DNA Full Form?</p>
+
+<button onclick="check2('A',this)">
+Deoxyribo Nucleic Acid
+</button>
+
+<button onclick="check2('B',this)">
+Dynamic Acid
+</button>
+
+<button onclick="check2('C',this)">
+Digital Network
+</button>
+
+<button onclick="check2('D',this)">
+None
+</button>
+
+</div>
+
+<!-- JEE -->
+
+<div id="jee" class="card" style="display:none;">
+
+<h2>⚡ JEE Questions</h2>
+
+<p>1. Value of π ?</p>
+
+<button onclick="checkjee1('A',this)">2.14</button>
+<button onclick="checkjee1('B',this)">3.14</button>
+<button onclick="checkjee1('C',this)">4.14</button>
+<button onclick="checkjee1('D',this)">5.14</button>
+
+</div>
+
+<!-- UPSC -->
+
+<div id="upsc" class="card" style="display:none;">
+
+<h2>🇮🇳 UPSC Questions</h2>
+
+<p>1. Capital of India?</p>
+
+<button onclick="checkupsc1('A',this)">Mumbai</button>
+<button onclick="checkupsc1('B',this)">Delhi</button>
+<button onclick="checkupsc1('C',this)">Kolkata</button>
+<button onclick="checkupsc1('D',this)">Chennai</button>
+
+</div>
+
+<!-- TOP BUTTON -->
+
+<button id="topbtn"
+onclick="topFunction()">
+
+⬆
+
+</button>
+
+<!-- SCROLL BAR -->
+
+<div id="scrollbar"
+style="
+position:fixed;
+top:0;
+left:0;
+height:5px;
+width:0%;
+background:#38bdf8;
+z-index:99999;
+">
+
+</div>
+
+<!-- AUDIO -->
+
+<audio id="correctsound">
+
+<source
+src="https://www.soundjay.com/buttons/sounds/button-3.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<audio id="wrongsound">
+
+<source
+src="https://www.soundjay.com/buttons/sounds/button-10.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<audio id="bgmusic" loop>
+
+<source
+src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<script>
+
+function openTab(tab){
+
+document.getElementById("neet").style.display="none";
+document.getElementById("jee").style.display="none";
+document.getElementById("upsc").style.display="none";
+
+document.getElementById(tab).style.display="block";
+
+}
+
+function login(){
+
+var username =
+document.getElementById("name").value;
+
+var password =
+document.getElementById("pass").value;
+
+if(username=="" || password==""){
+
+alert("Enter Details");
+
+return;
+
+}
+
+localStorage.setItem("username",username);
+
+document.getElementById("showname").innerHTML =
+"Name: " + username;
+
+document.getElementById("leaderboardname").innerHTML =
+"Player: " + username;
+
+document.getElementById("greet").innerHTML =
+"Welcome " + username + " 🚀";
+
+document.getElementById("loginpage").style.display =
+"none";
+
+}
+
+function logout(){
+
+location.reload();
+
+}
+
+function loadProfile(event){
+
+document.getElementById("profilepic").src =
+URL.createObjectURL(event.target.files[0]);
+
+}
+
+var text =
+"BANTY Learning App 🚀";
+
+var i = 0;
+
+function typing(){
+
+if(i < text.length){
+
+document.getElementById("typing").innerHTML +=
+text.charAt(i);
+
+i++;
+
+setTimeout(typing,100);
+
+}
+
+}
+
+typing();
+
+setTimeout(function(){
+
+document.getElementById("splash").style.display =
+"none";
+
+},3000);
+
+var score =
+parseInt(localStorage.getItem("score")) || 0;
+
+document.getElementById("score").innerHTML =
+"Score: " + score;
+
+updateProgress();
 
 </script>
 
 </body>
-
 </html>
